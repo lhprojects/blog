@@ -1,6 +1,6 @@
-# 翻译 XGBoost
+# XGBoost教程
 
-[Introduction to Boosted Trees](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)
+翻译自 [Introduction to Boosted Trees](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)
 
 
 XGBoost表示Extreme Gradient Boosting，
@@ -29,15 +29,18 @@ XGBoost是用来解决监督学习问题的。在监督学习里，我们使用�
 训练一个模型就是寻找最佳参数theta，最佳的参数应该是最符合数据和标签的参数。
 为了训练模型，我们需要定义我们的目标函数来衡量我们模型和数据符合的多么好。
 
-目标函数一个明显特征就是，他应该有两部分：训练损失和正则化项： obj(theta)= L(theta)+Omega(theta)
+目标函数一个明显特征就是，他应该有两部分：训练损失和正则化项：
+
+![](XGBoost/f0.png)
+
 其中L就是训练的损失函数，而Omega就是正则化项。损失函数可以用来衡量我们的模型预言训练数据能力。
 通常，L一个常用的选择是均方差（MSE），写作
 
-<img src="https://latex.codecogs.com/gif.latex?L(\theta)=\sum_i&space;(y_i-y_i^\prime&space;)^2" title="L(\theta)=\sum_i (y_i-y_i^\prime )^2" />
+![](XGBoost/f1.png)
 
-另外一个通常的选择是logistic损失，通常用于logistic回归
+另外一个通常的选择是logistic损失，通常用于logistic回归：
 
-<img src="https://latex.codecogs.com/gif.latex?L(\theta)=\sum_i[y_i\ln(1&plus;e^-y_i^\prime))&plus;(1-y_i)\ln&space;(1&plus;e^{y^\prime})]" title="L(\theta)=\sum_i[y_i\ln(1+e^-y_i^\prime))+(1-y_i)\ln (1+e^{y^\prime})]" />
+![](XGBoost/f2.png)
 
 人们经常忘掉加上正则化项。正则化项可以控制模型的复杂度，这可以帮助我们避免过拟合。
 这看起来有点抽象，所以我们考虑下面图片里的模型。要求你拟合一个阶梯函数。
@@ -58,6 +61,7 @@ XGBoost是用来解决监督学习问题的。在监督学习里，我们使用�
 我们首先学习XGBoost使用的模型：决策树集成。
 树集成模型分类或回归树的集合组成。举一个CART的简单例子：我们采用决策树来确定某个人时候会喜欢一款电脑游戏X。
 
+
 ![](XGBoost/cart.png)
 
 我们将一个家庭里的成员划分到不同的叶节点，并且给每个叶节点赋值。
@@ -70,11 +74,11 @@ XGBoost是用来解决监督学习问题的。在监督学习里，我们使用�
 ![](XGBoost/twocart.png)
 举一个例子，我们两棵树的树继承。两棵树的分数之和为最终用来做决定的分数。我们可以发现，两棵树起到了互相补充的作用。数学上可以把我们的模型表示为
 
-<img src="https://latex.codecogs.com/gif.latex?y_i^\prime=\sum_{k=1}^K&space;f_k(x_i),&space;f_k&space;\in&space;F" title="y_i^\prime=\sum_{k=1}^K f_k(x_i), f_k \in F" />
+![](XGBoost/f3.png)
 
 这里K是树的数量，f是函数（定义域是泛型空间F），F是所有可能的CART。（注：当CART与函数f一一对应，所有分叉方法和叶节点数值确定后，CART和f也就唯一确定了）我们的目标函数是
 
-<img src="https://latex.codecogs.com/gif.latex?obj(\theta)=\sum_i^n&space;l(y_i,y_i^\rime)&space;&plus;&space;\sum_{k=1}^K&space;\Omega(f_k)" title="obj(\theta)=\sum_i^n l(y_i,y_i^\rime) + \sum_{k=1}^K \Omega(f_k)" />
+![](XGBoost/f3.png)
 
 现在我们有一个棘手的问题：在随机森林的模型是什么？答案是：就是树集成啊。
 所以随机森林和提升书其实是一种模型。区别在于我们怎么训练他们。
@@ -86,7 +90,7 @@ XGBoost是用来解决监督学习问题的。在监督学习里，我们使用�
 
 我们把目标函数定义下面的样子
 
-<img src="https://latex.codecogs.com/gif.latex?obj(\theta)=\sum_i^n&space;l(y_i,y_i^\rime)&space;&plus;&space;\sum_{k=1}^K&space;\Omega(f_k)" title="obj(\theta)=\sum_i^n l(y_i,y_i^\rime) + \sum_{k=1}^K \Omega(f_k)" />
+![](XGBoost/f4.png)
 
 ## 可加性训练
 
@@ -97,7 +101,8 @@ XGBoost是用来解决监督学习问题的。在监督学习里，我们使用�
 首先固定我们已经学习到的，然后每次添加一棵树。
 我们可以把第t步骤的预测值写为
 
-<img src="https://latex.codecogs.com/gif.latex?y^{\prime(0)}_i&space;=&space;0\\&space;y^{\prime(1)}_i&space;=&space;f_1(x_i)\\&space;y^{\prime(2)}_i&space;=&space;f_1(x_i)&space;&plus;&space;f_2(x_i)\\&space;...&space;y^{\prime(t)}_i&space;=&space;y^{\prime(t-1)}_i&space;&plus;&space;f_t(x_i)\\" title="y^{\prime(0)}_i = 0\\ y^{\prime(1)}_i = f_1(x_i)\\ y^{\prime(2)}_i = f_1(x_i) + f_2(x_i)\\ ... y^{\prime(t)}_i = y^{\prime(t-1)}_i + f_t(x_i)\\" />
+![](XGBoost/f4.5.png)
+
 
 我们还是要问，在每一步我们想要添加什么样子的树。
 一个自然的事情就是，在每一步添加的树能够优化我们的目标
@@ -157,7 +162,84 @@ XGBoost是用来解决监督学习问题的。在监督学习里，我们使用�
 
 ![](XGBoost/f13.png)
 
-在上面表达式中，w_j的
+在上面表达式中，w_j的之间是互相独立的，w_j可以首先优化掉，我们的目标函数变为
+
+![](XGBoost/f14.png)
+
+现在，唯一不确定的就是q映射，就是树的结构，所以上公式就是对树结构的度量。
+
+![](XGBoost/struct_score.png)
+
+这听起来有点复杂。我们举个例子。
+在上图中，给定了树的结构，我们根据树的结构，把数据点放到相应的叶节点。
+把各种两加起来，然后用公式计算我们的树是好是坏（不是我懒，是原文就没有说的很详细）。
+这个分数听起来很像不纯度，不过这里我们把模型复杂度考虑进来了。
+
+
+## 学习树的结构
+
+现在我们已经知道，如何衡量一棵树的好坏了。
+理想的情况是，我们应该遍历所有可能的树，然后挑出最好的树。
+事情上这是不可能的。
+所以我们一次只优化树的一层。
+当我们把一个叶节点，分裂为两个叶节点。我们分数的增加（正的增加意为树变好）
+
+![](XGBoost/f15.png)
+
+这个公式分为几部分：1）左叶节点的分数2）右叶节点的分数3）原始叶节点的分数4）正规化项。
+我们可以看到，如果增益（前三项）小于gamma，我们最好别添加新的分支。
+这正是基于树的模型的剪枝技术。通过使用，监督学习的原理，我们可以自然的想到我们的技术应该可行。
+
+对于每一个实数值，我们通常需要搜索一个最优化分叉。
+为了高效的完成目标，我们把所有实例排序。 如下图所示：
+
+![](XGBoost/split_find.png)
+
+我们从左往右扫描，可以高效计算所有可能的分叉方法，然后就很容易找到最好的分叉方法。
+（注：这显然是一种贪心算法，每一次分叉都是最后，但是不一定是全局最优的）
+
+注：可加性树学习的局限性：
+
+因为枚举所有可能的树结构是很棘手的，我们每一次分叉一次。
+这种方式大多数时间都运行良好，但是对于一些边缘情况，可能会失败。
+对于这些边缘情况，训练的结果会退化，因为我们每次只考虑一个特征。
+
+见 [ Can Gradient Boosting Learn Simple Arithmetic?](http://mariofilho.com/can-gradient-boosting-learn-simple-arithmetic/)
+
+# 最后总结
+
+现在，你已经理解提升树了。
+你或许会问，对XGBoost简介在哪里？
+XGBoost正是这篇教程中原理所驱动的一个工具！
+更重要的是开发中XGBoost，不仅考虑系统性优化还考虑了机器学习的原理。
+这个库的目的是将机器的计算能力推到极致，提供稳定性，可移植性和精度。
+来试试吧，更重要的，欢迎为社区贡献你的指挥（代码，样例，教程）。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
