@@ -32,24 +32,24 @@ XGBoost是用来解决监督学习问题的。在监督学习里，我们使用�
 为了训练模型，我们需要定义我们的目标函数来衡量我们模型和数据符合的多么好。
 
 目标函数一个重要的特征就是，他有两部分：训练损失和正则化项：
-<center> ![](XGBoost/f0.png) </center>
+
 <div align='center'> <img src="XGBoost/f0.png"/> </div>
 
 其中L就是训练的损失函数，而Omega就是正则化项。损失函数可以用来衡量我们的模型预言训练数据能力。
 通常，L一个常用的选择是均方差（MSE），写作
 
-![](XGBoost/f1.png)
+<div align='center'> <img src="XGBoost/f1.png"/> </div>
 
 另外一个常用的选择是logistic损失，logistic损失函数用于logistic回归：
 
-![](XGBoost/f2.png)
+<div align='center'> <img src="XGBoost/f2.png"/> </div>
 
 人们经常忘掉加上正则化项。正则化项可以控制模型的复杂度，正则化项可以帮助我们避免过拟合。
 说这么多，看起来有点抽象，所以我们考虑下面图片里的模型。
 如果让你拟合一个阶梯函数。
 三种的曲线中哪一个你认为是最好的？
 
-![](XGBoost/step_fit.png)
+<div align='center'> <img src="XGBoost/step_fit.png"/> </div>
 
 正确的模型是红色模型！
 请思考在视觉上这是不是一个合理的拟合？
@@ -65,7 +65,7 @@ XGBoost是用来解决监督学习问题的。在监督学习里，我们使用�
 XGBoost的树集成由CART(分类或回归树)的集合组成。
 举一个CART的简单例子：我们采用决策树来预测某个人是否会喜欢一款电脑游戏X。如图：
 
-![](XGBoost/cart.png)
+<div align='center'> <img src="XGBoost/cart.png"/> </div>
 
 我们将一个家庭里的成员划分到不同的叶节点，并且给每个叶节点赋一个分数。
 
@@ -76,15 +76,15 @@ CART和决策树有一点不同。
 
 通常，一棵树在实践中还不够强。在集成学习方法，我们是多棵树一起做预测。
 
-![](XGBoost/twocart.png)
+<div align='center'> <img src="XGBoost/twocart.png"/> </div>
 
 举一个例子，我们两棵树的树继承。两棵树的分数之和为最终用来做决定的分数。我们可以发现，两棵树起到了互相补充的作用。数学上可以把我们的模型表示为
 
-![](XGBoost/f3.png)
+<div align='center'> <img src="XGBoost/f3.png"/> </div>
 
 这里K是树的数量，f是函数（定义域是泛型空间F），F是所有可能的CART。（注：当CART与函数f一一对应，所有分叉方法和叶节点数值确定后，CART和f也就唯一确定了）我们的目标函数是
 
-![](XGBoost/f3.png)
+<div align='center'> <img src="XGBoost/f4.png"/> </div>
 
 现在我们有一个有趣的问题：在随机森林的模型是什么？答案是：就是树集成啊。
 所以随机森林和提升书其实是一种模型。区别在于我们怎么训练他们。
@@ -94,7 +94,8 @@ CART和决策树有一点不同。
 
 现在我们已经介绍了我们模型，现在我们来学习如何训练我们的模型。答案就是（对于所有的监督学习都是）定义一个目标函数并且优化。
 我们把目标函数定义下面的样子
-![](XGBoost/f4.png)
+
+<div align='center'> <img src="XGBoost/f4.png"/> </div>
 
 ## 可加性训练
 
@@ -105,30 +106,31 @@ CART和决策树有一点不同。
 首先固定我们已经学习过的树，然后一颗一颗添加，一颗一颗训练。
 我们可以把第t步骤的模型的预测值写为
 
-![](XGBoost/f4.5.png)
+
+<div align='center'> <img src="XGBoost/f4.5.png"/> </div>
 
 我们还是要问，在每一步我们想要添加什么样子的树。
 很自然的我们想到，在每一步添加的树能够优化我们的目标函数：
 
-![](XGBoost/f5.png)
+<div align='center'> <img src="XGBoost/f5.png"/> </div>
 
 假设我们正在使用均方差（MSE）作为我们的损失函数，我们目标变为
 
-![](XGBoost/f6.png)
+<div align='center'> <img src="XGBoost/f6.png"/> </div>
 
 均方差的形式非常友好，目标函数的第一项是一个二次型！
 其他我们感兴趣的损失函数，通常没有这么好的形式。
 在更一般的情形，我们对损失函数机型泰勒展开，近似到第二阶：
 
-![](XGBoost/f7.png)
+<div align='center'> <img src="XGBoost/f7.png"/> </div>
 
 这里 g_i和h_i定义为
 
-![](XGBoost/f8.png)
+<div align='center'> <img src="XGBoost/f8.png"/> </div>
 
 移除所有常数项后，第t步，我们的目标函数就是
 
-![](XGBoost/f9.png)
+<div align='center'> <img src="XGBoost/f9.png"/> </div>
 
 这就是第t步要添加的树的优化目标。这个优化目标一个重要的优势就是目标函数只依赖于g_i和h_i。这就是为什么XGBoost可以自定义损失函数。我们可以优化任何损失函数，包括logistic回归或者对排序，只需要输入相应的g_i和h_i就可以了。
 
@@ -139,11 +141,11 @@ CART和决策树有一点不同。
 我们需要定义树的复杂度Omega(f)。
 为了完成这个目标，我们把f(x)定义为
 
-![](XGBoost/f10.png)
+<div align='center'> <img src="XGBoost/f10.png"/> </div>
 
 这里，w是叶节点的数值。q是从数据点到叶节点的映射(由树的结构确定，从树的根部往下爬就找到这个数据是那个数据点了)，T是叶节点的数量。在XGBoost，我们定义模型复杂度为
 
-![](XGBoost/f11.png)
+<div align='center'> <img src="XGBoost/f11.png"/> </div>
 
 当然，我们有其他的方式定义复杂度。但是上面的做法实践上表现不错。
 很多基于树的软件包，对正则化的处理不够详细，甚至简单的忽视掉了。
@@ -154,7 +156,7 @@ CART和决策树有一点不同。
 
 下面我们到了整个推导的非常魔幻的部分。我们重新写下第t颗树的目标函数
 
-![](XGBoost/f12.png)
+<div align='center'> <img src="XGBoost/f12.png"/> </div>
 
 这里 I_j={i|q(x_i)=j} 是第j个叶子上所有的数据点。
 注意，在第二行，第一项，我们改变求和下标。因为一个叶节点上的数值都是相等的。
@@ -163,11 +165,11 @@ CART和决策树有一点不同。
 （注：G_j是第j个叶子上所有数据的数值对损失函数的导数之和，H_j则是二次导数之和）
 我们的目标函数现在是：
 
-![](XGBoost/f13.png)
+<div align='center'> <img src="XGBoost/f13.png"/> </div>
 
 在上面表达式中，w_j的之间是互相独立的，w_j可以首先优化掉，我们的目标函数变为
 
-![](XGBoost/f14.png)
+<div align='center'> <img src="XGBoost/f14.png"/> </div>
 
 现在，唯一不确定的就是q映射，就是树的结构，所以上公式就是对树结构的度量。
 
@@ -187,7 +189,7 @@ CART和决策树有一点不同。
 所以我们一次只优化树的一层。
 当我们把一个叶节点，分裂为两个叶节点。负损失函数的变化为（正的意为树变好）
 
-![](XGBoost/f15.png)
+<div align='center'> <img src="XGBoost/f15.png"/> </div>
 
 这个公式分为几部分：1）左叶节点的分数2）右叶节点的分数3）原始叶节点的分数4）正规化项。
 我们可以看到，如果增益（前三项）小于gamma，我们最好别添加新的分支。
