@@ -9,3 +9,6 @@ I love the world, may the world respond to me with kindness
 ## [Team Rank](https://github.com/lhprojects/TeamRank/blob/master/README.md)
 
 给队伍打分，OneHot + LR
+
+## [Python练习](python110.ipynb)
+110道python练习题。
