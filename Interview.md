@@ -16,21 +16,31 @@
 A[MxN] x[N] = b[M] 方程的解和M，N相对大小的关系。
 
 At least one solution, if and only if
+
 rank(A) = rank(A,b)
 
 If there is at least one solution, the solution is unique if and only if
+
 rank(A)=N=number of variables
+
 There are infinity number of solutions, if and only if
+
 rank(A)<N=number of variables
 
 所以
+
 M == N，可能具有无解，唯一解， 无数解
+
 M < N，可能具有无解，无数解
+
 M > N，可能具有无解，唯一解，无数解
 
 LR和SVM区别
+
 核密度估计(kernel density estimator)
+
 高斯混合模型
+
 Test set, validation set区别
 
 
