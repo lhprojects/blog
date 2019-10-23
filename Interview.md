@@ -43,4 +43,12 @@ LR和SVM区别
 
 Test set, validation set区别
 
+高斯混合模型
+
+In statistics, kernel density estimation (KDE) is a non-parametric way to estimate the probability density function of a random variable
+
+EM算法
+
+In statistics, an expectation–maximization (EM) algorithm is an iterative method to find maximum likelihood or maximum a posteriori (MAP) estimates of parameters in statistical models, where the model depends on unobserved latent variables
+
 
