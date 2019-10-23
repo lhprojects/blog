@@ -23,7 +23,7 @@ If there is at least one solution, the solution is unique if and only if
 
 rank(A)=N=number of variables
 
-There are infinity number of solutions, if and only if
+If there is at least one solution, there are infinity number of solutions, if and only if
 
 rank(A)<N=number of variables
 
