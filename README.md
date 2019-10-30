@@ -12,3 +12,9 @@ I love the world, may the world respond to me with kindness
 
 ## [Python练习](python110.ipynb)
 110道python练习题。
+
+## [Python Note](python_note.ipynb)
+我的Python笔记
+
+## [Bash Note](bash_note.ipynb)
+我的bash笔记
