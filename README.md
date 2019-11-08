@@ -19,6 +19,6 @@ I love the world, may the world respond to me with kindness
 ## [Bash Note](bash_note.ipynb)
 我的bash笔记
 
-## [Bash Note](GBDT.ipynb)
+## [GBDT for Regression](GBDT.ipynb)
 使用GBDT做回归
 
