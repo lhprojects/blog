@@ -22,3 +22,6 @@ I love the world, may the world respond to me with kindness
 ## [GBDT for Regression](GBDT.ipynb)
 使用GBDT做回归
 
+## [Bootsgrap](Bootstrap.ipynb)
+bootstrap实验
+
