@@ -17,4 +17,5 @@ I love the world, may the world respond to me with kindness
 
 [Kmeans实现](src/kmeans.ipynb)
 
+[乘法还是移位](src/shift-or-multiply.md)
 
