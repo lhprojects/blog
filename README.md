@@ -11,8 +11,10 @@ I love the world, may the world respond to me with kindness
 
 [我的bash笔记](src/bash_note.ipynb)
 
-[实现GBDT做回归](src/GBDT.ipynb)
+[GBDT实现](src/GBDT.ipynb)
 
 [bootstrap实验](src/bootstrap.ipynb)
+
+[Kmeans实现](src/kmeans.ipynb)
 
 
