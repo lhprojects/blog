@@ -19,3 +19,5 @@ I love the world, may the world respond to me with kindness
 
 [乘法还是移位](src/shift-or-multiply.md)
 
+[Linear Regression实现](src/LinearRegression.ipynb)
+
