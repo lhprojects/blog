@@ -21,3 +21,5 @@ I love the world, may the world respond to me with kindness
 
 [Linear Regression实现](src/LinearRegression.ipynb)
 
+[Support Vector Machine实现](src/SVM.ipynb)
+
