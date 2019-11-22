@@ -23,3 +23,7 @@ I love the world, may the world respond to me with kindness
 
 [Support Vector Machine实现](src/SVM.ipynb)
 
+[Logistic Regression Implementation](src/LogisticRegression.ipynb)
+
+
+
