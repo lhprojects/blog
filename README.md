@@ -31,5 +31,7 @@ I love the world, may the world respond to me with kindness
 
 [Logistic Regression Implementation](src/LogisticRegression.ipynb)
 
+[Hi `numba`](src/HiNumba.ipynb)
+
 
 
