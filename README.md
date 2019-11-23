@@ -1,9 +1,17 @@
 # Hao's BLOG
 I love the world, may the world respond to me with kindness
 
+## Articles
+
 [翻译XGboost官方小教程](src/XGBoost教程(翻译).md)
 
+[乘法还是移位](src/shift-or-multiply.md)
+
+## Projects
+
 [给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank/blob/master/README.md)
+
+## Jupyter Notebooks
 
 [110道python练习题。](src/python110.ipynb)
 
@@ -16,8 +24,6 @@ I love the world, may the world respond to me with kindness
 [bootstrap实验](src/bootstrap.ipynb)
 
 [Kmeans实现](src/kmeans.ipynb)
-
-[乘法还是移位](src/shift-or-multiply.md)
 
 [Linear Regression实现](src/LinearRegression.ipynb)
 
