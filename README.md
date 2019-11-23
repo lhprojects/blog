@@ -1,6 +1,3 @@
-# Hao's BLOG
-I love the world, may the world respond to me with kindness
-
 ## Articles
 
 [翻译XGboost官方小教程](src/XGBoostIntroduction.md)
