@@ -9,7 +9,7 @@ I love the world, may the world respond to me with kindness
 
 ## Projects
 
-[给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank/blob/master/README.md)
+[给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank)
 
 ## Jupyter Notebooks
 
