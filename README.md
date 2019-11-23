@@ -3,7 +3,7 @@ I love the world, may the world respond to me with kindness
 
 ## Articles
 
-[翻译XGboost官方小教程](src/XGBoost教程(翻译).md)
+[翻译XGboost官方小教程](src/XGBoostIntroduction.md)
 
 [乘法还是移位](src/shift-or-multiply.md)
 
