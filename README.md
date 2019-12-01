@@ -10,30 +10,31 @@
 
 ## Jupyter Notebooks
 
-Github不支持在Github Page（也就是本网页）中浏览Jupyter Notebook. 所以请进入本博客的项目源地址[https://github.com/lhprojects/blog/](https://github.com/lhprojects/blog/)，再点击下面的连接
 
-[Naive Bayes Implementation](src/NaiveBayes.ipynb)
+[A speed comparison between `numpy`, `numba` and `cython`](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
+
+[Naive Bayes Implementation](https://github.com/lhprojects/blog/blob/master/src/NaiveBayes.ipynb)
 
 
-[110道python练习题。](src/python110.ipynb)
+[110道python练习题。](https://github.com/lhprojects/blog/blob/master/src/python110.ipynb)
 
-[我的Python笔记](src/python_note.ipynb)
+[我的Python笔记](https://github.com/lhprojects/blog/blob/master/src/python_note.ipynb)
 
-[我的bash笔记](src/bash_note.ipynb)
+[我的bash笔记](https://github.com/lhprojects/blog/blob/master/src/bash_note.ipynb)
 
-[GBDT Implementation](src/GBDT.ipynb)
+[GBDT Implementation](https://github.com/lhprojects/blog/blob/master/src/GBDT.ipynb)
 
-[bootstrap Experiments](src/bootstrap.ipynb)
+[bootstrap Experiments](https://github.com/lhprojects/blog/blob/master/src/bootstrap.ipynb)
 
-[Kmeans Implementation](src/kmeans.ipynb)
+[Kmeans Implementation](https://github.com/lhprojects/blog/blob/master/src/kmeans.ipynb)
 
-[Linear Regression Implementation](src/LinearRegression.ipynb)
+[Linear Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LinearRegression.ipynb)
 
-[Support Vector Machine Implementation](src/SVM.ipynb)
+[Support Vector Machine Implementation](https://github.com/lhprojects/blog/blob/master/src/SVM.ipynb)
 
-[Logistic Regression Implementation](src/LogisticRegression.ipynb)
+[Logistic Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LogisticRegression.ipynb)
 
-[Hi `numba`](src/HiNumba.ipynb)
+[Hi `numba`: some examples with `numba`](https://github.com/lhprojects/blog/blob/master/src/HiNumba.ipynb)
 
 
 
