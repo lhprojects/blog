@@ -12,6 +12,9 @@
 
 Github不支持在Github Page（也就是本网页）中浏览Jupyter Notebook. 所以请进入本博客的项目源地址[https://github.com/lhprojects/blog/](https://github.com/lhprojects/blog/)，再点击下面的连接
 
+[Naive Bayes Implementation](src/NaiveBayes.ipynb)
+
+
 [110道python练习题。](src/python110.ipynb)
 
 [我的Python笔记](src/python_note.ipynb)
