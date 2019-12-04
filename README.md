@@ -11,7 +11,7 @@
 ## Jupyter Notebooks
 
 
-[A speed comparison between `numpy`, `numba` and `cython`](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
+[A speed comparison between `numpy`, `numba`, `cython` and `pypy`](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
 
 [Naive Bayes Implementation](https://github.com/lhprojects/blog/blob/master/src/NaiveBayes.ipynb)
 
