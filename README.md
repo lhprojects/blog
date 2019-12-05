@@ -10,6 +10,7 @@
 
 ## Jupyter Notebooks
 
+[A estimation of mean, variance, third central moment, and fourth central moment](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/MomentEstimator.ipynb)
 
 [A speed comparison between `numpy`, `numba`, `cython` and `pypy`](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
 
