@@ -1,5 +1,9 @@
 ## Articles
 
+[人是一颗电子么？](src/APersonAElectron.md)
+
+[Unicode In c++](src/UnicodeInCpp.md)
+
 [翻译XGboost官方小教程](src/XGBoostIntroduction.md)
 
 [乘法还是移位](src/shift-or-multiply.md)
