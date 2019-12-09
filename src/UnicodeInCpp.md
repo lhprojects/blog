@@ -8,7 +8,7 @@
 
 现在使用UTF-8的情况越来越多了。
 
-![img](D:\projects\blog\src\Unicode\350px-Utf8webgrowth.svg.png)
+![img](Unicode/350px-Utf8webgrowth.svg.png)
 
 那么UTF-8是什么呢，UTF-8是Unicode的一种具体编码方案。用字节流来表示unicode字符流。
 
@@ -90,7 +90,7 @@ UTF-32编码中，一个unicode字符也是多个字节，那么在文件存储�
 - 对于linux操作系统，`cout`总是UTF-8编码。
 - 对于Windows操作系统，这个编码可以从cmd的属性页查询。例如我的属性页是936。
 
-![1575839152367](D:\projects\blog\src\Unicode\1575839152367.png)
+![img](Unicode/1575839152367.png)
 
 
 
