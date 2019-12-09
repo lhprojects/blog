@@ -14,8 +14,7 @@
 
 ## Jupyter Notebooks
 
-[Hi `<filesystem>` in C++]
-(https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/HiFilesystem.ipynb)
+[Hi `<filesystem>` in C++](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/HiFilesystem.ipynb)
 
 [Estimator of mean, variance, third central moment, and fourth central moment](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/MomentEstimator.ipynb)
 
