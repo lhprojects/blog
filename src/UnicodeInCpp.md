@@ -8,7 +8,7 @@
 
 现在使用UTF-8的情况越来越多了。
 
-![img](D:\projects\blog\src\Unicode\350px-Utf8webgrowth.svg.png)
+![img](Unicode/350px-Utf8webgrowth.svg.png)
 
 那么UTF-8是什么呢，UTF-8是Unicode的一种具体编码方案。用字节流来表示unicode字符流。
 
