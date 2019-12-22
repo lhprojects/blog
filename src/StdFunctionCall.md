@@ -8,7 +8,7 @@
 
 ## 设定
 
-我们研究一种典型的情况：function从一个lambda表达式构造，而lambda表达式只捕获了一个对象的引用（指针），在lambda表达式里，我们引用了这个的成员数据。代码如下
+我们研究一种典型的情况：function从一个lambda表达式构造，而lambda表达式只捕获了一个对象的引用（指针），在lambda表达式里，我们使用了这个对象的成员数据。代码如下
 ```c++
 class struct Clss {
     int c = 0;
