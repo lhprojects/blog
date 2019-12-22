@@ -35,7 +35,7 @@ __attribute((__noline__))
 #endif
 int invoke_stdfunction(std::function<int(int, int)>& f)
 {
-    return f(1, 1);
+    return f(1);
 }
 ```
 在函数里，我们使用了MSVC的特有拓展`__declspec(noinline)`和GCC的特有拓展`__attribute((__noline__))`，它们可以阻止编译器内联函数。这样可以避免编译器做实际生产环境中不可能做的优化，例如虚函数编译期解析和绑定。
@@ -52,7 +52,7 @@ __attribute((__noline__))
     if (!object) {
         exit(1);
     }
-    return object->virtual_function(1, 1);
+    return object->virtual_function(1);
 }
 ```
 对于`std::function`，如果其内容为空，那么函数调用就会抛出异常。在`invoke_virtual`中，我们对对象指针是否为`null`也做了一个判断：如果指针为`null`，我们就立即退出程序。这样的判断在生产环境中通常也是需要的（当然不会这么处理）。所以对`invoke_stdfunction`和`invoke_virtual`的对比，会是一个公平的比较。
