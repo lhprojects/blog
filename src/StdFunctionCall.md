@@ -70,7 +70,7 @@ invoke_stdfunction(std::function<int (int)>&):
   mov DWORD PTR [rsp+12], 1  # 1 入栈
   je .L12                    # throw expection
   lea rsi, [rsp+12]          # 1 的地址
-  call [QWORD PTR [rdi+24]]  # _Function_handler
+  call [QWORD PTR [rdi+24]]  # _M_invoke
   add rsp, 24                # 释放栈内存
   ret
 .L12:
@@ -125,9 +125,9 @@ invoke_virtual(Clss*):
 
    - 第一步，从指向`std::function<int (int, int)>`的指针`rdi`加上偏移量`24`读取一个函数指针。同时将`std::function`的参数压入到栈中，然后将参数的地址保存在寄存器中。另外一个隐藏的参数是指向`std::function`的指针`rdi`。
 
-   - 第二步，转到这个函数指针。结合`main`函数的反汇编的上下文，就可以知道这个函数实际上是`_Function_handler`。在这个函数里，我们通过参数的地址，将参数读取到寄存器中。
+   - 第二步，转到这个函数指针。结合`main`函数的反汇编的上下文，就可以知道这个函数实际上是`_Function_handler::_M_invoke`。在这个函数里，我们通过参数的地址，将参数读取到寄存器中。
 
-可见`std::function`参数传递更为复杂。为了擦除类型，必须存在一个中间函数`_Function_handler`。对于`std::function`不同的底层情况（lambda表达式，函数指针等等），`_Function_handler`实现也不一样。对于我们的现在的情况，伪代码如下（和真实实现可能有差异，真实实现有可能使用了虚函数。）
+可见`std::function`参数传递更为复杂。为了擦除类型，必须存在一个中间函数`_M_invoke`。对于`std::function`不同的底层情况（lambda表达式，函数指针等等），`_M_invoke`实现也不一样。对于我们的现在的情况，伪代码如下（和真实实现可能有差异，真实实现有可能使用了虚函数。）
 
 ```c++
 struct LambdaType {
@@ -148,25 +148,26 @@ struct function {
     // step 2
     // 万事不决用引用
     // 恢复底层类型信息
-    static int _Function_handler(function *this, int &&a) {
+    // https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/include/bits/std_function.h
+    static int _Function_handler::_M_invoke(function *this, int &&a) {
         return this->lambda(std::move(a));
     }
     
     // 底层类型已经被擦除。
-    int (*handler)(function *this, int &&) = _Function_handler;    
+    int (*handler)(function *this, int &&) = _Function_handler::_M_invoke;    
     
     // step 1
     // 函数签名必须为int(int)。
     int operator()(int a) {
-        return _Function_handler(this, std::move(a));
+        return _M_invoke(this, std::move(a));
     }
 };
 
 ```
 
-我们可以看到，_Function_handler接受的参数是引用(`&&`)而不是值。这导致`std::function::operator`的参数只能首先压入栈中，然后把其地址传递到`_Function_handler`。好处是对于大型对象，我们可以节省一次复制或者移动。坏处是对于像整数这类体积很小的类型，无法通过寄存器传递到`_Function_handler`。 注意，读者完全不必担心`ptr->lambda(std::move(a))`，实际上，这个语句完全被编译器内联掉了。
+我们可以看到，`_M_invoke`接受的参数是引用(`&&`)而不是值。这导致`std::function::operator()`的参数只能首先压入栈中，然后把其地址传递到`_M_invoke`。好处是对于大型对象，我们可以节省一次复制或者移动。坏处是对于像整数这类体积很小的类型，无法通过寄存器传递到`_M_invoke`。 注意，读者完全不必担心`ptr->lambda(std::move(a))`，实际上，这个语句完全被编译器内联掉了。
 
-实际上一个更仔细的实现，应该对整型或者指针进行特殊处理，将`_Function_handler`的签名改为`int(int)`，这样只需要载入`object`指针，不需要将参数推入栈中然后再从栈中去读这样低效了。
+实际上一个更仔细的实现，应该对整型或者指针进行特殊处理，将`_M_invoke`的签名改为`int(int)`，这样只需要载入`object`指针，不需要将参数推入栈中然后再从栈中去读这样低效了。
 
 - 最后，我们发现`invoke_stdfunction`对进行了栈指针的移动，而`invoke_virtual`不需要移动栈指针。所以`invoke_virtual`生成的指令更高效了。但是，这也不是普遍情况。因为栈指针可能会因为别的局部变量，而必须进行移动，从而和`invoke_stdfunction`一样生成两个指令来修改和恢复栈指针。
 
@@ -275,13 +276,13 @@ Clss::virtual_function(Clss*):
   ret
 ```
 
-- 第一次跳转之后，`invoke_stdfunction`到达`_Function_handler`而`invoke_virtual`到达`virtual_function`。
+- 第一次跳转之后，`invoke_stdfunction`到达`_M_invoke`而`invoke_virtual`到达`virtual_function`。
 
-- `invoke_stdfunction`中，仍然需要首先将指针`ref`压入栈，然后把其地址传递给`_Function_handler`。
+- `invoke_stdfunction`中，仍然需要首先将指针`ref`压入栈，然后把其地址传递给`_M_invoke`。
 
-- `_Function_handler`为了取出`ref->c`需要两次内存访问，首先根据传入的`ref`的地址取出指针`ref`，然后根据指针`ref`取出`c`，一共两次内存访问。
+- `_M_invoke`为了取出`ref->c`需要两次内存访问，首先根据传入的`ref`的地址取出指针`ref`，然后根据指针`ref`取出`c`，一共两次内存访问。
 
-- `_Function_handler`为了取出lambda表达式捕获的`obj.c`，也需要两次内存访问。是因为传入`_Function_handler`的隐藏指针`this`是指向`std::function`的，同时也是指向`lambda`表达式对象的。我们首先需要取出指向`obj`的指针，也就是lambda表达式的数据成员；然后根据这个指针取出`c`。
+- `_M_invoke`为了取出lambda表达式捕获的`obj.c`，也需要两次内存访问。是因为传入`_M_invoke`的隐藏指针`this`是指向`std::function`的，同时也是指向`lambda`表达式对象的。我们首先需要取出指向`obj`的指针，也就是lambda表达式的数据成员；然后根据这个指针取出`c`。
 
 ## 性能测试
 们测试了`std::function`和单纯虚函数调用的性能。对于`std::function`和虚函数调用，我们分别运行了1E9次，总时间分别为1.53秒和1.45秒。
@@ -290,7 +291,7 @@ Clss::virtual_function(Clss*):
 
 ## 设定
 
-我们已经知道，`_Function_handler`的参数是引用类型的了。如果`std::function`的函数签名是值类型的，我们需要将值入栈，然后把引用传递给`_Function_handler`。所以将指针改为引用是否能够提升性能呢？我们修改代码如下：
+我们已经知道，`_M_invoke`的参数是引用类型的了。如果`std::function`的函数签名是值类型的，我们需要将值入栈，然后把引用传递给`_M_invoke`。所以将指针改为引用是否能够提升性能呢？我们修改代码如下：
 
 ```c++
 struct Clss {
@@ -357,7 +358,7 @@ Clss::virtual_function(Clss&):
 
 - 首先在第一次跳转之前，`invoke_stdfunction`的代码要更加简洁，它只需要两次顺序无关的内存访问。而`invoke_virtual`也需要两次内存访问，但是两个指令必须按照顺序执行。这个差别很小。
 
-- 第一次跳转之后，`invoke_stdfunction`到达`_Function_handler`而`invoke_virtual`到达`virtual_function`。`_Function_handler`比`virtual_function`多一次内存访问。这是因为传入`_Function_handler`的隐藏指针`this`是指向`std::function`的，同时也是指向`lambda`表达式对象的。我们首先需要取出lambda表达式的数据成员，即指向`obj`的指针。而对于`virtual_function`来说，`this`指针就是指向`object`的指针，就是指向`obj`的。
+- 第一次跳转之后，`invoke_stdfunction`到达`_M_invoke`而`invoke_virtual`到达`virtual_function`。`_M_invoke`比`virtual_function`多一次内存访问。这是因为传入`_M_invoke`的隐藏指针`this`是指向`std::function`的，同时也是指向`lambda`表达式对象的。我们首先需要取出lambda表达式的数据成员，即指向`obj`的指针。而对于`virtual_function`来说，`this`指针就是指向`object`的指针，就是指向`obj`的。
 
 - 由于不许将参数入栈，`invoke_stdfunction`也省略了对栈指针的修改和恢复。
 
