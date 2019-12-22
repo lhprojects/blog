@@ -1,6 +1,6 @@
 ## Articles
 
-[人是一颗电子么？](src/StdFunctionCall.md)
+[std::function很慢吗？operator()不慢！](src/StdFunctionCall.md)
 
 [人是一颗电子么？](src/APersonAElectron.md)
 
