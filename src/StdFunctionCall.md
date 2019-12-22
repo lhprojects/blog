@@ -127,7 +127,7 @@ invoke_virtual(Clss*):
 
    - 第二步，转到这个函数指针。结合`main`函数的反汇编的上下文，就可以知道这个函数实际上是`_Function_handler::_M_invoke`。在这个函数里，我们通过参数的地址，将参数读取到寄存器中。
 
-可见`std::function`参数传递更为复杂。为了擦除类型，必须存在一个中间函数`_M_invoke`。对于`std::function`不同的底层情况（lambda表达式，函数指针等等），`_M_invoke`实现也不一样。对于我们的现在的情况，伪代码如下（和真实实现可能有差异，真实实现有可能使用了虚函数。）
+可见`std::function`参数传递更为复杂。为了擦除类型，必须存在一个中间函数`_M_invoke`。对于`std::function`不同的底层情况（lambda表达式，函数指针等等），`_M_invoke`实现也不一样。对于我们的现在的情况，伪代码如下（真实代码见 https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/include/bits/std_function.h）
 
 ```c++
 struct LambdaType {
@@ -138,34 +138,41 @@ struct LambdaType {
     }
 };
 
-struct function {
-    
-    union {
-        LambdaType lambda;
-        // ...
-    };
-
+struct _Function_handler {
     // step 2
     // 万事不决用引用
-    // 恢复底层类型信息
-    // https://github.com/gcc-mirror/gcc/blob/master/libstdc%2B%2B-v3/include/bits/std_function.h
-    static int _Function_handler::_M_invoke(function *this, int &&a) {
-        return this->lambda(std::move(a));
+    static int _M_invoke(_Any_data &data, int &&a) {
+        // 恢复底层类型信息
+        return data.lambda(std::move(a));
     }
+};
+struct function {
+    
+    union _Any_data {
+        LambdaType lambda;
+        // ...
+    } data;
+
     
     // 底层类型已经被擦除。
-    int (*handler)(function *this, int &&) = _Function_handler::_M_invoke;    
+    void *_M_manager;
+    int (*_M_invoker)(_Any_data &data, int &&) = _Function_handler::_M_invoke;
+    
+    
+    bool empty() { return _M_manager != nullptr; }
     
     // step 1
     // 函数签名必须为int(int)。
     int operator()(int a) {
-        return _M_invoke(this, std::move(a));
+        if(empty())
+            throw ...;           
+        return _M_invoker(data, std::move(a));
     }
 };
 
 ```
 
-我们可以看到，`_M_invoke`接受的参数是引用(`&&`)而不是值。这导致`std::function::operator()`的参数只能首先压入栈中，然后把其地址传递到`_M_invoke`。好处是对于大型对象，我们可以节省一次复制或者移动。坏处是对于像整数这类体积很小的类型，无法通过寄存器传递到`_M_invoke`。 注意，读者完全不必担心`ptr->lambda(std::move(a))`，实际上，这个语句完全被编译器内联掉了。
+我们可以看到，`_M_invoke`接受的参数是引用(`&&`)而不是值。这导致`std::function::operator()`的参数只能首先压入栈中，然后把其地址传递到`_M_invoke`。好处是对于大型对象，我们可以节省一次复制或者移动。坏处是对于像整数这类体积很小的类型，无法通过寄存器传递到`_M_invoke`。 注意，读者完全不必担心`data.lambda(std::move(a))`，实际上，这个语句完全被编译器内联掉了。
 
 实际上一个更仔细的实现，应该对整型或者指针进行特殊处理，将`_M_invoke`的签名改为`int(int)`，这样只需要载入`object`指针，不需要将参数推入栈中然后再从栈中去读这样低效了。
 
