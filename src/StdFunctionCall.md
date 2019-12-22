@@ -1,5 +1,5 @@
 # 简介
-这**不是**一篇介绍如何使用std::function的文章。我们假定读者对`std::function`已经非常熟悉了。在这篇文章里我们要深入的研究一下`std::function`函数调用`operator()`的性能。我们将通过两个案例，来研究调用std::function时的性能。
+这**不是**一篇介绍如何使用std::function的文章。我们假定读者对`std::function`已经非常熟悉了。在这篇文章里我们要深入的研究一下`std::function`函数调用`operator()`的性能。我们将通过三个案例，来研究调用std::function时的性能。
 
 本文全部的代码可以从 https://gist.github.com/lhprojects/d06145efb0f9728dcd0a41d6bdb881a8 找到。（No，网断了，所以代码丢失了！只剩了最后一小坨。）
 
