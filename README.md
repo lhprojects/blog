@@ -1,5 +1,7 @@
 ## Articles
 
+[人是一颗电子么？](src/StdFunctionCall.md)
+
 [人是一颗电子么？](src/APersonAElectron.md)
 
 [Unicode In c++](src/UnicodeInCpp.md)
