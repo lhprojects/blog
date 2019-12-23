@@ -1,5 +1,7 @@
 ## Articles
 
+[尝试std::function的其他设计](src/FunctionAnotherImpl.md)
+
 [std::function很慢吗？operator()不慢！](src/StdFunctionCall.md)
 
 [人是一颗电子么？](src/APersonAElectron.md)
