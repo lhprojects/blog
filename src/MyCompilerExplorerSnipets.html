@@ -38,8 +38,20 @@
   
   <iframe width="1600px" height="700px" src="https://godbolt.org/e?readOnly=true&hideEditorToolbars=true#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAM1QDsCBlZAQwBtMQBGAFlICsupVs1qhkAUgBMAISnTSAZ0ztkBPHUqZa6AMKpWAVwC2tQVvQAZPLUwA5YwCNMxEAGZOpAA6oFhdbT1DE0FvXzU6Kxt7IycXd0VlTFV/BgJmYgJA41MPJRVw2lT0gki7R2c3XLSMrOCq4tLo2MqASkVUA2JkDgByKVdrZEMsAGpxVx0jTCMSAE9x7HEABgBBfsHhzDGJgzVWQnnXRdXltdWFAnQQEANaPABHA0wAfU8CYnGdawIFkeRiTDMAgvW4PJ6vd4QFojWioTAAD26b3GslW3xGACp/oDgc9iMwAO4Q4hQmFwxGYZGuVErABuqDw6D%2BdAUxhBd0eLzeJIuVxuHPB3M%2B31%2B0NhCKRP2pp3pjOZtFZUzxhOJEHRGIxYvJkpRpxlDKZNFQpPEAHYaSNLSNeddQZzicL6L9aRAbASRt8WrrVlb5Yr2WCuZCbSAZrTMBBaS0vdKTqaACJ61aypkOdIm82nX3q7nbeMwzDukWxla%2BtAKtnKonciBSABs3JjFqteCoEEbWd9Vqw7GBIyFJbNiZOI7pBpGRskGeblpDdsF70dUuwI1peb%2BAKBAftNabnct5f9z3nQZ5l2uYYjUb3ceHZzHcsnz2n%2B79lZPquxW%2BPAtPUJvawJkmD6pukU7QmaM4evQmJruM%2BZfri%2BLVpCAFliylbIaq9ZRt6pYtm2uE%2Bl2lo9pgfa0nhQ6nD0bSsCAPQAKw9KQpg9EsLGoAxOhyHI1odF0Wz9JwLEEAxHHRqQADWIDcAAHAAdKapqSHJ3CMQAnIxrhLEskh1pIQgMdwLFsRxpBcT0LEKCASykGJ7G0aQcCwEgaBGJ4eDsGQFAQO5nneSAwAaYZVBecCxA2RADjiSxDjWOkswMSJpDuVM9AAPK0KwSWOaQWBGCIwDsLF%2BV4ACyThjZeUIkkuy9Cl3zKKV%2BwOPixCzHoWCle8eBGLFbQ0PQTBsBwPD8IIwiiCgvEyEIeAODZsC0MwUwgPCBCsKQ4YuOx2lOa6q0cBtWgKCQ20VOxnAaSZbSHWtVBGAQF0uO8txSZJqBvP41UALQZa41mJMkGgQOYtQ5HWpDmI05QuHWHihH4dAQ1wUNIwUsMxBUCMJPkKTVJk%2BjZFwrh40kBRFBkWPNLjFzFKjnBk/T1PWGU2Pw5wbRnZ03RcHRDHMaxpWWfCcl1r9dbcCMwDIMgIwaQpkgjBAuCECQYySPEIx6B5XnOJr7jQjxMhyKJA1tAggJYC4ULSSAjGcErkimpwjHcEs3B1hpGmmq4GlGT0JmkP1nC6cLeWWdZtn2RbgeSKZIsMebjmSTtvgaNwQA%3D%3D%3D"></iframe>
 
+  <h2> std::error_code </h2>
   
+  For GCC: 
   
+  Returning error_code is by register!
+  
+  Checking if there is an error is fast!
+  
+  However, `checking which error_category and error_condition the error is` is slow. 
+  
+  One non-inline function to get the system_category and one or two virtual function call to check if `lhs.category().equivalent(rhs)` or `rhs.category().equivalent(lhs)`
+    
+  
+   <iframe width="1600px" height="700px" src="https://godbolt.org/e?readOnly=true&hideEditorToolbars=true#g:!((g:!((g:!((h:codeEditor,i:(fontScale:14,j:1,lang:c%2B%2B,selection:(endColumn:1,endLineNumber:24,positionColumn:1,positionLineNumber:1,selectionStartColumn:1,selectionStartLineNumber:24,startColumn:1,startLineNumber:1),source:'%23include+%3Ccstdio%3E%0A%23include+%3Csystem_error%3E%0A%23include+%3Ctype_traits%3E%0A%0Astd::error_code+get_error_code()+noexcept%3B%0A%0A//static_assert(std::is_trivial%3Cstd::error_code%3E::value)%0Astatic_assert(std::is_trivially_destructible%3Cstd::error_code%3E::value)%3B%0A%0Avoid+foo()+%7B%0A%0A++++auto+ec+%3D+get_error_code()%3B%0A++++if(!!ec)+%5B%5Blikely%5D%5D+%7B%0A++++++++return%3B%0A++++%7D+else+if(ec+%3D%3D+std::errc::file_exists)+%7B%0A++++++++printf(%221%22)%3B%0A++++%7D+else+%7B%0A++++++++printf(%222%22)%3B%0A++++%7D%0A%0A%7D%0A%0A%0A'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:gsnapshot,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'1',intel:'0',libraryCode:'0',trim:'1'),fontScale:14,j:1,lang:c%2B%2B,libs:!(),options:'+-O2+-std%3Dc%2B%2B2a',selection:(endColumn:20,endLineNumber:42,positionColumn:20,positionLineNumber:42,selectionStartColumn:1,selectionStartLineNumber:40,startColumn:1,startLineNumber:40),source:1),l:'5',n:'0',o:'x86-64+gcc+(trunk)+(Editor+%231,+Compiler+%231)+C%2B%2B',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',n:'0',o:'',t:'0')),version:4"></iframe>  
   </center>
 </body>
   
