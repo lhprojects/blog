@@ -1,5 +1,7 @@
 ## Articles
 
+[比读取局部变量还快的 C++ Singleton] (src/Singleton.md)
+
 [Unique_ptr 和 c 调用约定](src/UniquePtrAndCdecl.md)
 
 [C++片段反汇编](src/MyCompilerExplorerSnipets.html)
