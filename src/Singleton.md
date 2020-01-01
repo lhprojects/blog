@@ -20,7 +20,7 @@ Manager &GetManager();
 在第一次调用`GetManager`的时候，我们对单例模式进行初始化。
 ```c++
 // .cpp
-Manager &GetManager() {
+Manager &GetManager_Meyers() {
     static Manager manager("Harry");
     return manager;
 }
@@ -28,7 +28,7 @@ Manager &GetManager() {
 上面的代码等价于
 ```c++
 // .cpp
-Manager &GetManager() {
+Manager &GetManager_Meyers() {
     static char buffer[sizeof(Manager)]; //align as Manager
     static char init;
     if(!init) {
@@ -53,7 +53,7 @@ GetManager_Meyers():
 
 ```c++
 Manager manager("Harry");
-Manager &GetManager() {
+Manager &GetManager_Global() {
     return manager;
 }
 ```
