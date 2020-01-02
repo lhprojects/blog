@@ -1,26 +1,26 @@
 ## Articles
 
-[比读取局部变量还快的 C++ Singleton](src/Singleton.md)
+【c++】[比读取局部变量还快的 C++ Singleton](src/Singleton.md)
 
-[Unique_ptr 和 c 调用约定](src/UniquePtrAndCdecl.md)
+【c++】[Unique_ptr 和 c 调用约定](src/UniquePtrAndCdecl.md)
 
-[C++片段反汇编](src/MyCompilerExplorerSnipets.html)
+【c++】[C++片段反汇编](src/MyCompilerExplorerSnipets.html)
 
-[有符号？无符号？性能？确定性？](src/UnsignedSigned.md)
+【c++】[有符号？无符号？性能？确定性？](src/UnsignedSigned.md)
 
-[C++ 整型备忘](src/IntCpp.md)
+【c++】[C++ 整型备忘](src/IntCpp.md)
 
-[尝试std::function的其他设计](src/FunctionAnotherImpl.md)
+【c++】[尝试std::function的其他设计](src/FunctionAnotherImpl.md)
 
-[std::function很慢吗？operator()不慢！](src/StdFunctionCall.md)
+【c++】[std::function很慢吗？operator()不慢！](src/StdFunctionCall.md)
 
-[人是一颗电子么？](src/APersonAElectron.md)
+【物理】[人是一颗电子么？](src/APersonAElectron.md)
 
-[Unicode In c++](src/UnicodeInCpp.md)
+【c++】[Unicode In c++](src/UnicodeInCpp.md)
 
-[翻译XGboost官方小教程](src/XGBoostIntroduction.md)
+【机器学习】[翻译XGboost官方小教程](src/XGBoostIntroduction.md)
 
-[乘法还是移位](src/shift-or-multiply.md)
+【c++】[乘法还是移位](src/shift-or-multiply.md)
 
 ## Projects
 
