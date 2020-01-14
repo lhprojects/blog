@@ -28,13 +28,15 @@
 
 ## Jupyter Notebooks
 
+【Machine Learning】[Gaussian Mixture Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/GaussianMixture.ipynb)
+
 [Hi `<filesystem>` in C++](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/HiFilesystem.ipynb)
 
-[Estimator of mean, variance, third central moment, and fourth central moment](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/MomentEstimator.ipynb)
+【Statistics】[Estimator of mean, variance, third central moment, and fourth central moment](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/MomentEstimator.ipynb)
 
 [A speed comparison between `numpy`, `numba`, `cython` and `pypy`](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
 
-[Naive Bayes Implementation](https://github.com/lhprojects/blog/blob/master/src/NaiveBayes.ipynb)
+【Machine Learning】[Naive Bayes Implementation](https://github.com/lhprojects/blog/blob/master/src/NaiveBayes.ipynb)
 
 
 [110道python练习题。](https://github.com/lhprojects/blog/blob/master/src/python110.ipynb)
@@ -43,17 +45,17 @@
 
 [我的bash笔记](https://github.com/lhprojects/blog/blob/master/src/bash_note.ipynb)
 
-[GBDT Implementation](https://github.com/lhprojects/blog/blob/master/src/GBDT.ipynb)
+【Machine Learning】[GBDT Implementation](https://github.com/lhprojects/blog/blob/master/src/GBDT.ipynb)
 
-[bootstrap Experiments](https://github.com/lhprojects/blog/blob/master/src/bootstrap.ipynb)
+【Statistics】[bootstrap Experiments](https://github.com/lhprojects/blog/blob/master/src/bootstrap.ipynb)
 
-[Kmeans Implementation](https://github.com/lhprojects/blog/blob/master/src/kmeans.ipynb)
+【Machine Learning】[Kmeans Implementation](https://github.com/lhprojects/blog/blob/master/src/kmeans.ipynb)
 
-[Linear Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LinearRegression.ipynb)
+【Machine Learning】[Linear Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LinearRegression.ipynb)
 
-[Support Vector Machine Implementation](https://github.com/lhprojects/blog/blob/master/src/SVM.ipynb)
+【Machine Learning】[Support Vector Machine Implementation](https://github.com/lhprojects/blog/blob/master/src/SVM.ipynb)
 
-[Logistic Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LogisticRegression.ipynb)
+【Machine Learning】[Logistic Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LogisticRegression.ipynb)
 
 [Hi `numba`: some examples with `numba`](https://github.com/lhprojects/blog/blob/master/src/HiNumba.ipynb)
 
