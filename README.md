@@ -28,6 +28,8 @@
 
 ## Jupyter Notebooks
 
+【Optics】[Simple ray tracing in optics](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SimpleRayTracing.ipynb)
+
 【Mathematical Model】[New York Covid19](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/NewYorkCovid19.ipynb)
 
 【Machine Learning】[Gaussian Mixture Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/GaussianMixture.ipynb)
