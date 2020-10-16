@@ -28,8 +28,6 @@
 
 ## Jupyter Notebooks
 
-Metropolis-Hasting.ipynb
-
 【Optics】[使用Metropolis-Hasting方法产生高斯随机数（非对称建议分布）](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/Metropolis-Hasting.ipynb)
 
 【Optics】[Simple ray tracing in optics](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SimpleRayTracing.ipynb)
