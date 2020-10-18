@@ -27,6 +27,7 @@
 [给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank)
 
 ## Jupyter Notebooks
+【Machine Learning】[潜在语义模型：潜在语义分析，概率潜在语义分析和潜在狄利克雷分配](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LSA.ipynb)
 
 【Machine Learning】[使用Metropolis-Hasting方法产生高斯随机数（非对称建议分布）](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/Metropolis-Hasting.ipynb)
 
