@@ -62,7 +62,7 @@
 
 【Machine Learning】[Linear Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LinearRegression.ipynb)
 
-【Machine Learning】[Support Vector Machine Implementation](https://github.com/lhprojects/blog/blob/master/src/SVM.ipynb)
+【Machine Learning】[Support Vector Machine Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SVMImplement.ipynb)
 
 【Machine Learning】[Logistic Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LogisticRegression.ipynb)
 
