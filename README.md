@@ -62,7 +62,7 @@
 
 【Machine Learning】[Kmeans Implementation](https://github.com/lhprojects/blog/blob/master/src/kmeans.ipynb)
 
-【Machine Learning】[Linear Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LinearRegression.ipynb)
+【Machine Learning】[Linear Regression Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LinearRegression.ipynb)
 
 【Machine Learning】[Support Vector Machine Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SVMImplement.ipynb)
 
