@@ -27,6 +27,8 @@
 [给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank)
 
 ## Jupyter Notebooks
+【Machine Learning】[多项式拟合中的偏差和方差](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/BiasAndVarianceInPolyFit.ipynb)
+
 【Machine Learning】[深入支持向量机](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SVMInsight.ipynb)
 
 【Machine Learning】[潜在语义模型：潜在语义分析，概率潜在语义分析和潜在狄利克雷分配](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LSA.ipynb)
