@@ -68,7 +68,7 @@
 
 【Machine Learning】[Logistic Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LogisticRegression.ipynb)
 
-[Hi `numba`: some examples with `numba`](https://github.com/lhprojects/blog/blob/master/src/HiNumba.ipynb)
+【Numba】[Hi `numba`: some examples with `numba`](https://github.com/lhprojects/blog/blob/master/src/HiNumba.ipynb)
 
 
 
