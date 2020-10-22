@@ -1,6 +1,6 @@
 ## Articles
 
-【c++】[比读取局部变量还快的 C++ Singleton](src/Singleton.md)
+【c++】[多线程单例模式](src/Singleton.md)
 
 【c++】[Unique_ptr 和 c 调用约定](src/UniquePtrAndCdecl.md)
 
