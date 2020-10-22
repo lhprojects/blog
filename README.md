@@ -45,7 +45,7 @@
 
 【Statistics】[Estimator of mean, variance, third central moment, and fourth central moment](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/MomentEstimator.ipynb)
 
-【Numpy, Numba, Cython, PyPY, Julia】[A speed comparison between `python` `numpy`, `numba`, `cython`, `pypy`, `julia`, `java` and `c++` in numerical compulation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
+【Numpy, Numba, Cython, PyPy, Julia】[A speed comparison between `python` `numpy`, `numba`, `cython`, `pypy`, `julia`, `java` and `c++` in numerical compulation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
 
 【Machine Learning】[Naive Bayes Implementation](https://github.com/lhprojects/blog/blob/master/src/NaiveBayes.ipynb)
 
