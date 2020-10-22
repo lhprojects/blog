@@ -41,7 +41,7 @@
 
 【Machine Learning】[Gaussian Mixture Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/GaussianMixture.ipynb)
 
-[Hi `<filesystem>` in C++](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/HiFilesystem.ipynb)
+【c++】[Hi `<filesystem>` in C++](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/HiFilesystem.ipynb)
 
 【Statistics】[Estimator of mean, variance, third central moment, and fourth central moment](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/MomentEstimator.ipynb)
 
