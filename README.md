@@ -27,6 +27,9 @@
 [给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank)
 
 ## Jupyter Notebooks
+
+【c++】[c++14和c++17练习](https://github.com/lhprojects/blog/blob/master/cxx14Andcxx17Execise.ipynb)
+
 【Machine Learning】[多项式拟合中的偏差和方差](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/BiasAndVarianceInPolyFit.ipynb)
 
 【Machine Learning】[深入支持向量机](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SVMInsight.ipynb)
