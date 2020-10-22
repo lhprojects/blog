@@ -28,7 +28,7 @@
 
 ## Jupyter Notebooks
 
-【c++】[c++14和c++17练习](https://github.com/lhprojects/blog/blob/master/cxx14Andcxx17Execise.ipynb)
+【c++】[c++14和c++17练习](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/cxx14Andcxx17Execise.ipynb)
 
 【Machine Learning】[多项式拟合中的偏差和方差](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/BiasAndVarianceInPolyFit.ipynb)
 
