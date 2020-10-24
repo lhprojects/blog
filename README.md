@@ -27,6 +27,9 @@
 [给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank)
 
 ## Jupyter Notebooks
+
+【c++】[c++14和c++17练习](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/cxx14Andcxx17Execise.ipynb)
+
 【Machine Learning】[多项式拟合中的偏差和方差](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/BiasAndVarianceInPolyFit.ipynb)
 
 【Machine Learning】[深入支持向量机](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SVMInsight.ipynb)
@@ -45,16 +48,16 @@
 
 【Statistics】[Estimator of mean, variance, third central moment, and fourth central moment](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/MomentEstimator.ipynb)
 
-[A speed comparison between `numpy`, `numba`, `cython` and `pypy`](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
+【Python, Numpy, Numba, Cython, PyPy, Julia】[A speed comparison between `python` `numpy`, `numba`, `cython`, `pypy`, `julia`, `java` and `c++` in numerical compulation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
 
 【Machine Learning】[Naive Bayes Implementation](https://github.com/lhprojects/blog/blob/master/src/NaiveBayes.ipynb)
 
 
-[110道python练习题。](https://github.com/lhprojects/blog/blob/master/src/python110.ipynb)
+【Python】[110道python练习题。](https://github.com/lhprojects/blog/blob/master/src/python110.ipynb)
 
-[我的Python笔记](https://github.com/lhprojects/blog/blob/master/src/python_note.ipynb)
+【Python】[我的Python笔记](https://github.com/lhprojects/blog/blob/master/src/python_note.ipynb)
 
-[我的bash笔记](https://github.com/lhprojects/blog/blob/master/src/bash_note.ipynb)
+【Bash】[我的bash笔记](https://github.com/lhprojects/blog/blob/master/src/bash_note.ipynb)
 
 【Machine Learning】[GBDT Implementation](https://github.com/lhprojects/blog/blob/master/src/GBDT.ipynb)
 
@@ -68,7 +71,7 @@
 
 【Machine Learning】[Logistic Regression Implementation](https://github.com/lhprojects/blog/blob/master/src/LogisticRegression.ipynb)
 
-[Hi `numba`: some examples with `numba`](https://github.com/lhprojects/blog/blob/master/src/HiNumba.ipynb)
+【Numba】[Hi `numba`: some examples with `numba`](https://github.com/lhprojects/blog/blob/master/src/HiNumba.ipynb)
 
 
 
