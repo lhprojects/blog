@@ -28,7 +28,7 @@
 
 ## Jupyter Notebooks
 
-【Numpy】[一些Numpy函数的速度] (https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/NumpyBenchmarks.ipynb)
+【Numpy】[一些Numpy函数的速度比较](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/NumpyBenchmarks.ipynb)
 
 【c++】[c++14和c++17练习](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/cxx14Andcxx17Execise.ipynb)
 
