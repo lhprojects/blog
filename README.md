@@ -29,7 +29,7 @@
 ## Jupyter Notebooks
 
 
-【Machine Learning】[多维二次样条回归](https://github.com/lhprojects/blog/blob/master/SplineRegression.ipynb)
+【Machine Learning】[多维二次样条回归](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SplineRegression.ipynb)
 
 【Numpy】[一些Numpy函数的速度比较](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/NumpyBenchmarks.ipynb)
 
