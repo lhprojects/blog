@@ -28,6 +28,8 @@
 
 ## Jupyter Notebooks
 
+【Machine Learning】[高斯过程与超参数优化：演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/GaussianProcessAndHyperparameterTune.ipynb)
+
 【Machine Learning】[线性回归与主成分分析与正则化](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LinearRegressionAndPCA_Exp.ipynb)
 
 【Machine Learning】[多维二次样条回归](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SplineRegression.ipynb)
