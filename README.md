@@ -28,6 +28,9 @@
 
 ## Jupyter Notebooks
 
+
+【Machine Learning】[局部回归：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LocalRegression.ipynb)
+
 【Machine Learning】[k最邻近与kd树：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/kNNAndKDTree.ipynb)
 
 【Machine Learning】[高斯过程与超参数优化：演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/GaussianProcessAndHyperparameterTune.ipynb)
