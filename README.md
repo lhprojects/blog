@@ -29,6 +29,8 @@
 ## Jupyter Notebooks
 
 
+【Machine Learning】[`sklearn KernelRidge`一点笔记](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SklearnRidgeKernel.ipynb)
+
 【Machine Learning】[局部回归：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LocalRegression.ipynb)
 
 【Machine Learning】[k最邻近与kd树：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/kNNAndKDTree.ipynb)
