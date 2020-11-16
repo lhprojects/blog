@@ -41,6 +41,9 @@
 
 【Machine Learning】[线性回归与主成分分析与正则化](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LinearRegressionAndPCA_Exp.ipynb)
 
+
+【Machine Learning】[B样条作为概率密度函数，以及kernel](https://github.com/lhprojects/blog/blob/master/BsplineAsDensityFunctionAndAsKernel.ipynb)
+
 【Machine Learning】[多维高次（非自然）样条回归](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/BSplineRegression.ipynb)
 
 【Machine Learning】[多维二次自然样条回归](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SplineRegression.ipynb)
