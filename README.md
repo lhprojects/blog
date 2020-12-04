@@ -28,7 +28,7 @@
 
 ## Jupyter Notebooks
 
-[Python] [`any`, `all` and empty array](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
+【Python】[`any`, `all` and empty array](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
 
 【Machine Learning】[LearnLog: Jupyter Notebook中记录traning进度的小工具](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LearnLog.ipynb)
 
