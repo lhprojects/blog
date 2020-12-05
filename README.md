@@ -32,7 +32,9 @@
 [[github]](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
 [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
 
-【Machine Learning】[LearnLog: Jupyter Notebook中记录traning进度的小工具](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LearnLog.ipynb)
+【Machine Learning】LearnLog: Jupyter Notebook中记录traning进度的小工具
+[[github]](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LearnLog.ipynb)
+[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/LearnLog.ipynb)
 
 【Machine Learning】[回归模型比较：演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparsionOfRegressionModels.ipynb)
 
