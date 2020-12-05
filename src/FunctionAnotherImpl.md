@@ -1,3 +1,7 @@
+---
+title: Is C++ std::function slow?
+---
+
 # std::function with Effective Small Buffer Optimization
 
 对比GCC和MSVC的实现，一时手痒，自己实现了一个`std::function`的另外一种设计`esbo::function`。
