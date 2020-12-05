@@ -28,7 +28,13 @@
 
 ## Jupyter Notebooks
 
+nbviewer is suggested. nbviewer is very stable and fast, and it support link for table content.
+
+【Python】[`any`, `all` and empty array](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
+[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
+
 【Machine Learning】[LearnLog: Jupyter Notebook中记录traning进度的小工具](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LearnLog.ipynb)
+[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/LearnLog.ipynb)
 
 【Machine Learning】[回归模型比较：演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparsionOfRegressionModels.ipynb)
 
@@ -54,6 +60,7 @@
 【Machine Learning】[多维二次自然样条回归](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SplineRegression.ipynb)
 
 【Numpy】[一些Numpy函数的速度比较](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/NumpyBenchmarks.ipynb)
+[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/NumpyBenchmarks.ipynb)
 
 【c++】[c++14和c++17练习](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/cxx14Andcxx17Execise.ipynb)
 
