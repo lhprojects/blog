@@ -1,6 +1,3 @@
----
-title: Is C++ std::function slow?
----
 
 # std::function with Effective Small Buffer Optimization
 
