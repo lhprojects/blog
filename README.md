@@ -29,6 +29,7 @@
 ## Jupyter Notebooks
 
 nbviewer is suggested. nbviewer is very stable and fast, and it support link for table content.
+【Machine Learning】[K臂老虎机](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/KBandits.ipynb) [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/KBandits.ipynb)
 
 【Python】[`any`, `all` and empty array](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
 [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
