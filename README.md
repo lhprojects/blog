@@ -32,7 +32,7 @@ nbviewer is suggested. nbviewer is very stable and fast, and it support link for
 
 【Machine Learning, pytorch】[评测手头几台pc的pytorch的性能](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/TorchBenchmark.ipynb) [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/TorchBenchmark.ipynb)
 
-【Machine Learning】[K臂老虎机](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/KBandits.ipynb) [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/KBandits.ipynb)
+【Machine Learning】[K臂老虎机：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/KBandits.ipynb) [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/KBandits.ipynb)
 
 【Python】[`any`, `all` and empty array](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
 [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
