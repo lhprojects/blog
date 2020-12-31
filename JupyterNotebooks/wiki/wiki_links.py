@@ -4,14 +4,9 @@ from .wiki_titles import WikiTitles
     
 class WikiLinks:
 
-    def __init__(self, wiki_titles = None, file = ''):
+    def __init__(self, file, wiki_titles = None):
         
-        if type(wiki_titles) is str:
-            wiki_titles = WikiTitles('')
         self.wiki_titles = wiki_titles
-        
-        if file == '':
-            file = 'pass2.npz'   
             
         with np.load(file) as data:
             links = data['links']

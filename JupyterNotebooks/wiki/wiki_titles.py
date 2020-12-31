@@ -4,10 +4,7 @@ import numpy as np
 
 class WikiTitles:
 
-    def __init__(self, file=''):
-            
-        if file == '':
-            file = "pass1.5.data"
+    def __init__(self, file):
             
         with open(file, "rb") as f:
             page_titles, redirect_map = pickle.load(f)
