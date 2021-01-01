@@ -24,13 +24,17 @@
 
 ## Projects
 
+[维基百科词条推荐](https://github.com/lhprojects/WikiDiscovery)
+
 [给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank)
 
 ## Jupyter Notebooks
 
 nbviewer is suggested. nbviewer is very stable and fast, and it support link for table content.
 
-【Machine Learning, PageRank】[PageRank：wikipeida articles 为例子](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/PageRank.ipynb)
+
+【python, numpy】[`hash_unqiue.unique`: a faster implementation of `numpy.unique`](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/HashUnique.ipynb)
+
 
 【Machine Learning, LSA, pLSA, LDA】[LSA, pLSA和LDA：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LSA.ipynb) [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/LSA.ipynb)
 
