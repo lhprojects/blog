@@ -24,6 +24,8 @@
 
 ## Projects
 
+[量子力学空间波函数模拟](https://github.com/lhprojects/QuSim)
+
 [维基百科词条推荐](https://github.com/lhprojects/WikiDiscovery)
 
 [给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank)
