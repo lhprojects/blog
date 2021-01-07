@@ -22,7 +22,7 @@
 
 【c++】[乘法还是移位](src/shift-or-multiply.md)
 
-【c++】[啊，适配tensorflow和3060Ti，我暴走了！](src/tensorflow-3060ti.md.md)
+【tensorflow, GPU, RTX 3060Ti】[啊，适配tensorflow和3060Ti，我暴走了！](src/tensorflow-3060ti.md.md)
 
 
 ## Projects
