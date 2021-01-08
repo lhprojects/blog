@@ -155,5 +155,15 @@ cpu能跑起来就行！
 
 
 
+====
+两天后！
+升级驱动程序到461.09
+发现把cuda11.0.1 升级到cuda11.0.3（cuda 11.0 udpate 1）
+然后就可以运行了！
+
+所以
+windows10 + rtx 3060ti + driver461.09 + cuda11.0.3 + cudnn8.0.2 + tensorflow2.4 + tensorflow option: allow_growth
+解决问题！
+
 
 
