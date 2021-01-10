@@ -24,6 +24,7 @@
 
 【tensorflow, GPU, RTX 3060Ti】[啊，适配tensorflow和3060Ti，我暴走了！](src/tensorflow-3060ti.md)
 
+【faceswap】[详细记录一次Faceswap换脸](src/faceswap.md)
 
 ## Projects
 
