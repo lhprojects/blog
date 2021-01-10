@@ -3,12 +3,12 @@
 
 # 详细记录一次Faceswap换脸
 
-要说深度学习换脸，那么大家首先想到的应该是Deepfakes。可惜原版的Deepfakes已经挂了。现在比较流行了两个换脸框架是faceswap和DeepFaceLab，因为github上前者的点赞更多一点，所以我是使用了faceswap。我对DeepFaceLab只有肤浅的理解。
+要说深度学习换脸，那么大家首先想到的应该是Deepfakes。可惜原版的Deepfakes已经挂了。现在比较流行了两个换脸框架是faceswap和DeepFaceLab，因为前者github上的点赞更多一点，所以我是使用了faceswap。我对DeepFaceLab只有肤浅的理解。
 
 两者有一些区别：
 
 * faceswap提供了各种有用的功能，并且对各种功能都提供了不错gui支持。你可以选择使用或者不用这些工具，或者根据自己的需求反复重复其中某些步骤。DeepFaceLab则提供了一系列的脚本，固定好了每一步做什么，所以对新手反而可能很友好。
-* faceswap并没有采用GAN技术，而DeepFaceLab采用了GAN技术。
+* faceswap并没有采用GAN技术，而DeepFaceLab采用了GAN技术。据说使用了GAN技术图形细节更加逼真，而不使用GAN技术图形可能比较模糊。毕竟GAN使用神经网络来判定生成的脸部是否够逼真，对于神经网络来说判定模糊还是精细更容易，所以GAN网络会首先迫使生成网络生成的图像更精细。
 
 
 
