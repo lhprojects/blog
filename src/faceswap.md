@@ -128,7 +128,7 @@ faceswap自带的tensorflow版本是2.3，使用的是cuda10.1。然而cuda10.1�
 
 提取过程将提取出人脸图片，并且将特征点和掩码信息保存在对齐文件中。对齐文件可以包含多个掩码，但是训练和转换时，只使用其中一个掩码。提取杨宝宝脸部图片的操作界面如下：
 
-<img src="faceswap/extract.PNG" style="zoom: 80%;" />
+<img src="faceswap/extract.png" style="zoom: 80%;" />
 
 **选项配置**
 
