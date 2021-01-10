@@ -162,7 +162,7 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 使用如下图形界面查看和调整对齐信息：
 
-![image-20210110040832769](C:\Users\liangh\AppData\Roaming\Typora\typora-user-images\image-20210110040832769.png)
+![image-20210110040832769](faceswap/manual_panel.png)
 
 
 
