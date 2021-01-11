@@ -104,7 +104,7 @@ faceswap自带的tensorflow版本是2.3，使用的是cuda10.1。然而cuda10.1�
 最终得到杨女神的超清(1280x720, 720P)视频，经过剪辑后长度约为3:02秒，帧速率为25帧每秒。
 
 <p style="text-align: center;">
-<img src="faceswap/yaingying_full_scrrenshot.png" style="zoom: 50%; text-align: center;" />
+<img src="faceswap/yaingying_full_scrrenshot.png" style="zoom: 50%;" />
 </p>
 
 
@@ -128,7 +128,9 @@ faceswap自带的tensorflow版本是2.3，使用的是cuda10.1。然而cuda10.1�
 
 提取过程将提取出人脸图片，并且将特征点和掩码信息保存在对齐文件中。对齐文件可以包含多个掩码，但是训练和转换时，只使用其中一个掩码。提取杨宝宝脸部图片的操作界面如下：
 
+<p style="text-align: center;">
 <img src="faceswap/extract.png" style="zoom: 80%; text-align: center;" />
+</p>
 
 **选项配置**
 
@@ -158,16 +160,18 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 女神们提取出来的第一张图片分别如下：
 
-
-<img src="faceswap/yangying_000053_0.png" alt="yangying" style="zoom: 67%; text-align: center;" /><img src="faceswap/liuyifei_000001_0.png" alt="liuyifei" style="zoom: 67%; text-align: center;" />
-
+<p style="text-align: center;">
+<img src="faceswap/yangying_000053_0.png" alt="yangying" style="zoom: 67%;" /><img src="faceswap/liuyifei_000001_0.png" alt="liuyifei" style="zoom: 67%;" />
+</p>
 
 
 ## 对齐信息
 
 使用如下图形界面查看和调整对齐信息：
 
-<img src="faceswap/manual_panel.png" alt="image-20210110040832769" style="zoom:80%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/manual_panel.png" alt="image-20210110040832769" style="zoom:80%;" />
+</p>
 
 
 
@@ -178,15 +182,21 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 效果如下图。这里读取了对齐文件中的信息，并且标记在人脸的图片上。我们可以看到粉红色的的特征点。
 
-<img src="faceswap/manual.png" style="zoom: 50%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/manual.png" style="zoom: 50%;" />
+</p>
 
 脸部放大（附加一定旋转）后，便可以得到在extract步骤我们得到脸部图片。
 
-<img src="faceswap/manual2.png" style="zoom: 50%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/manual2.png" style="zoom: 50%;" />
+</p>
 
 打开显示Mask，此时显示的是components掩码，可以看到components掩码可能不会包含全部眉毛，因而extended掩码会更安全一些。
 
-<img src="faceswap/manual3.png" style="zoom: 50%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/manual3.png" style="zoom: 50%;" />
+</p>
 
 
 
@@ -196,7 +206,9 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 由于杨女神提取出来的图片中，很多其实没有人脸或者人脸上有遮挡。这些没有用的图片需要人工删除。为了提高人工处理的效率，我们可以对图片进行排序。排序有两重作用，第一重作用是，与人脸差别很大的图片会排到前边；第二重作用是，相似的图片会倾向于挨着，因而方便删除。
 
-<img src="faceswap/sort.png" alt="sort" style="zoom:75%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/sort.png" alt="sort" style="zoom:75%;" />
+</p>
 
 **选项配置**
 
@@ -220,8 +232,9 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 ​		我们删除了人脸图片，不再需要图片本身了，但是这些图片相应的对齐信息还在对齐文件中`yangying_alignments.fsa`，现在我们需要将这些不需要的对齐信息删除掉。这一步还有一个额外的副作用，那就是sort后，原来的人脸图片文件名遭到了修改了，这一步除了调整对齐文件，还会将图片文件名恢复为原来的文件名，也就是`extrac`那一步产生的人脸图片的文件名。
 
-<img src="faceswap/remove-faces.png" style="zoom:80%; text-align: center;" />
-
+<p style="text-align: center;">
+<img src="faceswap/remove-faces.png" style="zoom:80%;" />
+</p>
 
 
 **选项配置**
@@ -236,8 +249,9 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 现在我拥有大量的女神们的头部照片，并且可以通过对齐文件中的信息将每张图片的脸部摆正，调节到合适大小，并且可以通过掩码屏蔽背景。现在就可以开始训练编码器和解码器了。我们想用杨女神的脸替换刘女神的脸。操作界面如下：
 
-<img src="faceswap/train.png" style="zoom:80%; text-align: center;" />
-
+<p style="text-align: center;">
+<img src="faceswap/train.png" style="zoom:80%;" />
+</p>
 
 
 **选项配置**
@@ -258,7 +272,9 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 除此之外，还有一些设置，在菜单里
 
-<img src="faceswap/train2.png" style="zoom:80%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/train2.png" style="zoom:80%;" />
+</p>
 
 **选项配置**
 
@@ -267,7 +283,9 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 * Network.AllowGrowth = True，不设置这个容易出现VRAM不足的的问题。
 * Network.Mixed Precision =True，混合精度可以有效加快训练速度。
 
-<img src="faceswap/train3.png" style="zoom:80%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/train3.png" style="zoom:80%;" />
+</p>
 
 **选项配置**
 
@@ -277,15 +295,21 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 经过15个小时的训练，共进行了160K次迭代，速度大约为每秒100个图片（注意，这里每次迭代会对两个人的脸的图片分别处理一个批次。`100=2*16*160/(15*3600)`）。
 
-<img src="faceswap/rate.png" style="zoom:80%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/rate.png" style="zoom:80%;" />
+</p>
 
 这是女神脸部训练集的的损失函数：
 
-<img src="faceswap/loss_curve.png" style="zoom:80%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/loss_curve.png" style="zoom:80%;" />
+</p>
 
 红线表明了A的脸替换为A的脸的损失程度，而蓝线表明了B的脸替换为B的脸的算是程度。然而使用损失函数并不只管。我们可以使用Timelpace.Timelapse Output中换脸的结果来直观的观察换脸效果。最后效果如下：
 
-<img src="faceswap/preview.jpg" style="zoom:80%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/preview.jpg" style="zoom:80%;" />
+</p>
 
 
 
@@ -293,7 +317,9 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 现在我们可以对摆正的，大小合适的，提供掩码的情况的脸部图片进行换脸了。我们要对一个视频中的人脸进行换脸，我们需要每一帧（如果有人脸的话）人脸的对齐信息。所以我们需要重复提取步骤中的操作，但是这次将Extract every N设置为1，即每一帧我们都要提取人脸。然后和以前一样进行排序和清理工作。下面进行转换，图形界面如下：
 
-<img src="faceswap/convert.png" style="zoom:80%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/convert.png" style="zoom:80%;" />
+</p>
 
 
 
@@ -315,19 +341,24 @@ Plugins.Writer = Ffmpeg，即存储为mp4格式的视频。
 
 除了这里选项，菜单中选项也很重要：
 
-<img src="faceswap/convert2.png" style="zoom:80%; text-align: center;" />
+<p style="text-align: center;">
+<img src="faceswap/convert2.png" style="zoom:80%;" />
+</p>
 
 由于原视频中杨女神的脸太糊了，所以最终生成的杨女神脸部也很糊（相比之下，刘女神的脸就精细很多）。我们必须打开锐化选项，对转化后的脸部进行锐化。
 
 最后终于可以进行换脸转化了，经过几分钟的等待，就可以生成[mp4视频](https://www.bilibili.com/video/BV1Ph41127XM/) 。
 
-<iframe src="//player.bilibili.com/player.html?aid=203544277&bvid=BV1Ph41127XM&cid=280519649&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true", sytle="text-aling: center;"> </iframe>
+<p style="text-align: center;">
+<iframe src="//player.bilibili.com/player.html?aid=203544277&bvid=BV1Ph41127XM&cid=280519649&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</p>
 
 我压缩的gif如下：
 
+<p style="text-align: center;">
 <img src="faceswap/output.gif" style="zoom:80%; text-align: center;" />
+</p>
 
-（这绝对不是大幂幂！）
 
 # 讨论
 
