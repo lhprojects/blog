@@ -156,8 +156,9 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 女神们提取出来的第一张图片分别如下：
 
 <p style="text-align: center;">
-<img src="faceswap/yangying_000053_0.png" alt="yangying" style="zoom: 67%;" /><img src="faceswap/liuyifei_000001_0.png" alt="liuyifei" style="zoom: 67%;" />
+<img src="faceswap/yangying_000053_0.png" alt="yangying" style="zoom: 30%;" /><img src="faceswap/liuyifei_000001_0.png" alt="liuyifei" style="zoom: 30%;" />
 </p>
+
 ## 6.2 对齐信息
 
 使用如下图形界面查看和调整对齐信息：
