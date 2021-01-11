@@ -3,16 +3,12 @@
 
 # 1 详细记录一次Faceswap换脸
 
-
-
 要说深度学习换脸，那么大家首先想到的应该是Deepfakes。可惜原版的Deepfakes已经挂了。现在比较流行了两个换脸框架是faceswap和DeepFaceLab，因为前者github上的点赞更多一点，所以我是使用了faceswap。我对DeepFaceLab只有肤浅的理解。
 
 两者有一些区别：
 
 * faceswap提供了各种有用的功能，并且对各种功能都提供了不错gui支持。你可以选择使用或者不用这些工具，或者根据自己的需求反复重复其中某些步骤。DeepFaceLab则提供了一系列的脚本，固定好了每一步做什么，所以对新手反而可能很友好。
 * faceswap并没有采用GAN技术，而DeepFaceLab采用了GAN技术。据说使用了GAN技术图形细节更加逼真，而不使用GAN技术图形可能比较模糊。毕竟GAN使用神经网络来判定生成的脸部是否够逼真，对于神经网络来说判定模糊还是精细更容易，所以GAN网络会首先迫使生成网络生成的图像更精细。
-
-
 
 # 2  原理
 
@@ -162,8 +158,6 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 <p style="text-align: center;">
 <img src="faceswap/yangying_000053_0.png" alt="yangying" style="zoom: 67%;" /><img src="faceswap/liuyifei_000001_0.png" alt="liuyifei" style="zoom: 67%;" />
 </p>
-
-
 ## 6.2 对齐信息
 
 使用如下图形界面查看和调整对齐信息：
@@ -171,8 +165,6 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 <p style="text-align: center;">
 <img src="faceswap/manual_panel.png" alt="image-20210110040832769" style="zoom:80%;" />
 </p>
-
-
 
 **选项配置**
 
@@ -197,8 +189,6 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 <img src="faceswap/manual3.png" style="zoom: 50%;" />
 </p>
 
-
-
 ## 6.3 数据清理
 
 ### 6.3.1 人脸图片排序
@@ -221,8 +211,6 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 * Output.Group By = Hist，对于我们的情况可能没作用（？）
 * Output.Keep = True，保留原来的图片。
 
-
-
 ### 6.3.2 删除无用的人脸图片
 
 对人脸图片进行排序后，我们可以复制`sort`目录到`clean`目录，然后把`clean`目录中将不需要的图片全部删除。不需要的图片包括，没有人脸的图片，有遮挡的图片，过暗的图片，模糊的图片。
@@ -234,8 +222,6 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 <p style="text-align: center;">
 <img src="faceswap/remove-faces.png" style="zoom:80%;" />
 </p>
-
-
 **选项配置**
 
 * Job = Remove-Faces，即任务为移除对齐文件中的多余的信息。
@@ -290,7 +276,6 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 
 * Mask.Mask Type = Extended，在提取步骤我没有勾选任何Mask Type，所以我现在只有components和extended两种掩码可以用。不要选Components，选择Extended，不然可能漏掉眉毛。
 
-  
 
 经过15个小时的训练，共进行了160K次迭代，速度大约为每秒100个图片（注意，这里每次迭代会对两个人的脸的图片分别处理一个批次。`100=2*16*160/(15*3600)`）。
 
@@ -310,8 +295,6 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 <img src="faceswap/preview.jpg" style="zoom:80%;" />
 </p>
 
-
-
 # 8 转换
 
 现在我们可以对摆正的，大小合适的，提供掩码的情况的脸部图片进行换脸了。我们要对一个视频中的人脸进行换脸，我们需要每一帧（如果有人脸的话）人脸的对齐信息。所以我们需要重复提取步骤中的操作，但是这次将Extract every N设置为1，即每一帧我们都要提取人脸。然后和以前一样进行排序和清理工作。下面进行转换，图形界面如下：
@@ -319,8 +302,6 @@ liuyifei/extract_configration_1/extract/liuyifei_*.png
 <p style="text-align: center;">
 <img src="faceswap/convert.png" style="zoom:80%;" />
 </p>
-
-
 
 **选项配置**
 
@@ -357,11 +338,7 @@ Plugins.Writer = Ffmpeg，即存储为mp4格式的视频。
 <p style="text-align: center;">
 <img src="faceswap/output.gif" style="zoom:80%; text-align: center;" />
 </p>
-
-
 # 10 讨论
-
-
 
 ## 10.1 B脸的多样性
 
@@ -376,13 +353,9 @@ Plugins.Writer = Ffmpeg，即存储为mp4格式的视频。
 
 实现后者要求我们要有丰富多样的B的脸的样本。
 
-
-
 ## 10.2 掩码的精确性
 
 显然掩码的精确性是很重要的。明星脸的问题是，明星脸都太长太尖了，老外的模型经常不能很好的处理下巴。解决方法：手动调节对齐文件中的特征点位置。
-
-
 
 ## 10.3 B脸与A背景的一致性
 
@@ -391,13 +364,7 @@ Plugins.Writer = Ffmpeg，即存储为mp4格式的视频。
 * 肤色，尽管我们精确的生成了B的脸，但是由于B的脸的肤色与A的脸不一致，尤其是额头部分色差会很明显，那么最终效果会比较差。解决方法：需要采用颜色修正来改正。
 * 阴影，如果照射B的脸的光源和照射A的脸的光源方向不一致，那么最终效果也会比较差。解决方法：丰富B的脸的训练样本，增加多种光源下B的脸的样本。
 
-
-
 ## 10.4 训练迭代次数
 
 一般在深度学习训练中，并不是迭代的次数越多越好。因为存在过拟合现象，提前终止训练反而可以得到比较好的效果。但是在faceswap中（可能是由于比较小的学习率），迭代的次数越多越好。实际上如果你觉得继续投入的大量的时间和电费，但带来的效果的提升很微小，就可以结束训练了。
-
-
-
-
 
