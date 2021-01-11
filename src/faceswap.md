@@ -94,8 +94,9 @@ faceswap自带的tensorflow版本是2.3，使用的是cuda10.1。然而cuda10.1�
 
 最终得到刘女神的超清(1280x720, 720P)视频，长度约为4:52秒，帧速率为25帧每秒。
 
+<p style="text-align: center;">
 <img src="faceswap/liuyifei_full_screenshot.png" alt="刘亦菲" style="zoom: 50%; text-align: center;" />
-
+</p>
 
 
 如法炮制，在B站找到了杨女神采访的采访视频。可是从B站下载的视频清晰度不高。而视频清晰度对最终结果有很大的影响。所以又从油管网找到了一样的一段视频。然后使用某个付费的油管下载器（这个下载器同时支持P站和B站，咳咳，所以值得拥有）把视频下载下来。
