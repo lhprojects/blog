@@ -95,7 +95,7 @@ faceswap自带的tensorflow版本是2.3，使用的是cuda10.1。然而cuda10.1�
 最终得到刘女神的超清(1280x720, 720P)视频，长度约为4:52秒，帧速率为25帧每秒。
 
 <p style="text-align: center;">
-<img src="faceswap/liuyifei_full_screenshot.png" alt="刘亦菲" style="zoom: 50%; text-align: center;" />
+<img src="faceswap/liuyifei_full_screenshot.png" alt="刘亦菲" style="zoom: 50%;" />
 </p>
 
 
@@ -103,7 +103,9 @@ faceswap自带的tensorflow版本是2.3，使用的是cuda10.1。然而cuda10.1�
 
 最终得到杨女神的超清(1280x720, 720P)视频，经过剪辑后长度约为3:02秒，帧速率为25帧每秒。
 
+<p style="text-align: center;">
 <img src="faceswap/yaingying_full_scrrenshot.png" style="zoom: 50%; text-align: center;" />
+</p>
 
 
 
