@@ -1,7 +1,7 @@
 [TOC]
 
 
-# 1 简介
+# 1 详细记录一次Faceswap换脸
 
 要说深度学习换脸，那么大家首先想到的应该是Deepfakes。可惜原版的Deepfakes已经挂了。现在比较流行了两个换脸框架是faceswap和DeepFaceLab，因为前者github上的点赞更多一点，所以我是使用了faceswap。我对DeepFaceLab只有肤浅的理解。
 
