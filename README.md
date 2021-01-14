@@ -34,6 +34,13 @@
 
 [给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank)
 
+## classical_learn
+
+【Machine Learning, classical_learn】[Linear regression](https://nbviewer.jupyter.org/github/lhprojects/classical_learn/blob/master/notebooks/LinearRegression.ipynb)
+
+【Machine Learning, classical_learn】[Logistic regression](https://nbviewer.jupyter.org/github/lhprojects/classical_learn/blob/master/notebooks/LogisticRegression.ipynb)
+
+
 ## Jupyter Notebooks
 
 nbviewer is suggested. nbviewer is very stable and fast, and it support link for table content.
@@ -119,11 +126,7 @@ nbviewer is suggested. nbviewer is very stable and fast, and it support link for
 
 【Machine Learning】[Kmeans Implementation](https://github.com/lhprojects/blog/blob/master/src/kmeans.ipynb)
 
-【Machine Learning】[Linear Regression Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LinearRegression.ipynb)
-
 【Machine Learning】[Support Vector Machine Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SVMImplement.ipynb)
-
-【Machine Learning】[Logistic Regression Implementation](https://nbviewer.jupyter.org/github/lhprojects/classical_learn/blob/master/notebooks/LogisticRegression.ipynb)
 
 【Numba】[Hi `numba`: some examples with `numba`](https://github.com/lhprojects/blog/blob/master/src/HiNumba.ipynb)
 
