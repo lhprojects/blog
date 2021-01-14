@@ -1,3 +1,19 @@
+# Table of Content
+
+## Projects
+
+[量子力学空间波函数模拟](https://github.com/lhprojects/QuSim)
+
+[维基百科词条推荐](https://github.com/lhprojects/WikiDiscovery)
+
+[传统机器学习详解和实现 classical_learn](https://github.com/lhprojects/classical_learn)
+
+## classical_learn
+
+【Machine Learning, classical_learn】[Linear regression](https://nbviewer.jupyter.org/github/lhprojects/classical_learn/blob/master/notebooks/LinearRegression.ipynb)
+
+【Machine Learning, classical_learn】[Logistic regression](https://nbviewer.jupyter.org/github/lhprojects/classical_learn/blob/master/notebooks/LogisticRegression.ipynb)
+
 ## Articles
 
 【c++】[多线程单例模式](src/Singleton.md)
@@ -25,20 +41,6 @@
 【tensorflow, GPU, RTX 3060Ti】[啊，适配tensorflow和3060Ti，我暴走了！](src/tensorflow-3060ti.md)
 
 【faceswap】[详细记录一次Faceswap换脸](src/faceswap.md)
-
-## Projects
-
-[量子力学空间波函数模拟](https://github.com/lhprojects/QuSim)
-
-[维基百科词条推荐](https://github.com/lhprojects/WikiDiscovery)
-
-[给队伍打分，OneHot + LR](https://github.com/lhprojects/TeamRank)
-
-## classical_learn
-
-【Machine Learning, classical_learn】[Linear regression](https://nbviewer.jupyter.org/github/lhprojects/classical_learn/blob/master/notebooks/LinearRegression.ipynb)
-
-【Machine Learning, classical_learn】[Logistic regression](https://nbviewer.jupyter.org/github/lhprojects/classical_learn/blob/master/notebooks/LogisticRegression.ipynb)
 
 
 ## Jupyter Notebooks
