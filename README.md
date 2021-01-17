@@ -47,6 +47,9 @@
 
 nbviewer is suggested. nbviewer is very stable and fast, and it support link for table content.
 
+uland.taobao.com/sem/tbsearch?
+
+【python, numpy】[QQ AppUtil.dll从浏览器历史读取用户某些域名下的搜索数据，人工暴力破解最后一个域名](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/HumanBurstCrackQQDomain.ipynb)
 
 【python, numpy】[`hash_unqiue.unique`: a faster implementation of `numpy.unique`](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/HashUnique.ipynb)
 
