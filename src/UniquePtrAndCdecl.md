@@ -14,6 +14,7 @@ std::unique_ptr一般被认为是zero-overhead或者说和raw pointer（裸指�
 void bar(int*p) noexcept;
 
 __attribute__((noinline)) void baz_rawpointer(int *p)  noexcept {
+    global_v = *p;
     delete p;
 }
 void use_rawpinter(int *p)
@@ -24,7 +25,8 @@ void use_rawpinter(int *p)
 ```
 然后我们使用std::unique_ptr实现相同的功能：
 ```c++
-__attribute__((noinline)) void baz_unique_ptr(std::unique_ptr<int>) noexcept {    
+__attribute__((noinline)) void baz_unique_ptr(std::unique_ptr<int> p) noexcept { 
+    global_v = *p;
 }
 
 void use_unique_ptr(std::unique_ptr<int> p)
@@ -37,41 +39,46 @@ void use_unique_ptr(std::unique_ptr<int> p)
 我们比较他们的反编译代码：
         
 ```asm
-baz_rawpointer(int*):
+baz_rawpointer(int*): # @baz_rawpointer(int*)
   testq %rdi, %rdi
-  je .L1
-  movl $4, %esi
-  jmp operator delete(void*, unsigned long)
-.L1:
-  ret
-use_rawpinter(int*):
-  pushq %rbp
-  movq %rdi, %rbp
-  call bar(int*)
-  movq %rbp, %rdi
-  popq %rbp
-  jmp baz_rawpointer(int*)
+  je .LBB0_1
+  jmp operator delete(void*) # TAILCALL
+.LBB0_1:
+  retq
+use_rawpinter(int*): # @use_rawpinter(int*)
+  pushq %rbx
+  movq %rdi, %rbx
+  callq bar(int*)
+  movq %rbx, %rdi
+  popq %rbx
+  jmp baz_rawpointer(int*) # TAILCALL
 ```
 
 ```asm
-baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >):
-  ret
-use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >):
+baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >): # @baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >)
+  movq (%rdi), %rax
+  movl (%rax), %eax
+  movl %eax, global_v(%rip)
+  retq
+use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >): # @use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >)
+  pushq %r14
   pushq %rbx
+  pushq %rax
   movq %rdi, %rbx
   movq (%rdi), %rdi
-  call bar(int*)
-  movq (%rbx), %rdi
+  callq bar(int*)
+  movq (%rbx), %r14
+  movq %r14, (%rsp)
   movq $0, (%rbx)
-  testq %rdi, %rdi
-  je .L7
-  movl $4, %esi
+  movq %rsp, %rdi
+  callq baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >)
+  testq %r14, %r14
+  je .LBB3_1
+  movq %r14, %rdi
+  addq $8, %rsp
   popq %rbx
-  jmp operator delete(void*, unsigned long)
-.L7:
-  popq %rbx
-  ret
-
+  popq %r14
+  jmp operator delete(void*) # TAILCALL
 ```
 
 可以看到std::unique_ptr代码更长一些，所以通常也更慢一些。
@@ -162,6 +169,7 @@ private:
 
 
 __attribute__((noinline)) void baz_trivial_unique_ptrt(trivial_unique_ptr<int>) noexcept {
+    global_v = *p;
 }
 
 
@@ -200,6 +208,7 @@ private:
 
 __attribute__((noinline)) void baz_ticket(ticket<int> t) noexcept {
     auto p  = t.redeem();
+    global_v = *p;
 }
 
 void use_ticket(ticket<int> t)
@@ -226,7 +235,7 @@ void use_ticket(ticket<int> t)
 
 ## 参考阅读：
 
-完整代码见[链接](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAM1QDsCBlZAQwBtMQBGAFlICsupVs1qhkAUgBMAISnTSAZ0ztkBPHUqZa6AMKpWAVwC2tQVvQAZPLUwA5YwCNMxLgGZSAB1QLC62nsMTQS8fNTorG3sjJxdeJRUw2gYCZmICAONTTkVlTFU/ZNSCCLtHZzdFFLSMoOyFKuLrUujy7gBKRVQDYmQOAHIpV2tkQywAanFXHSNMIxIAT0nscQAGAEFB4dHMCam2YBJCBCMl1Y31glmPYUvJnRHmBQUxgBVT9friA1UxtWQAa0wBAmAHZZOsxpDfngAUCIG1dgARMZYKjMAysAiTcFrKFjTAAD2uMMI0NhBAgLzGACoPAiQGMPAB9CB00GyEGIs54v6Ain1dAgEAGWh4ACOBkwTI8BGId2sWNcy0kADYpCrGfTGSyPAA6Yi5R6YeEI8Rgs1ciFQgVCkXiyXS2V3N5KsYGrCzeHst1A7q0MY24WiiVSmVyqYu7AQQOE5AIETAY3M0hjWgY1hhtptbGgy1rDzEPAAN2YlxA3KhVNpTKRqfTYexZwtjfWTckQyoqLGTKZD1EPYmrfbqKarwASgBJABqawnFiZa2kE4mAFZZGu%2B6AQLLi3g2EzmA48OIV1zT23XMolBeRzZx9PZ/PFxOL%2BY8FQmxcrjdMHcHk9XneNZPm%2BYEXknGc5wXJdfkLIs91YJk7RDR1iHZCtIR3eD92Qh0wy9SZkVRdFMRbXEoUJYlkFJLCEKQ4M8NlSkaTZBlmVZU1zU5PEMNg3ccIY0MmNogT7SEtD1XVN0tXYmMCTjBNjWIXVkzrVgM1lLNvQtHjWytTC4Lo3DxImVVUA8ZxSxIQiIBExDjNQ0y1VVaTITNHE8TxQMFAAd2YDxWSZFNlOZbNXA8qEdMivTyIM/j7ME1DbMM0SULDMY0FoeonOIU1XCI3JbnCtz9L47CErExz1XMyyiHDRFkvi%2BjKvSzLsvVXK3PylFCt/cLP1i14aTGRMKU46QfQIP1tRzZtSoAPzs5q0qY8axnfQKESwdhLhm4q5vzODSw4Xiq2ZWs03Uht%2BtbTkyIGs4i1QPB0DGBxUggBVaQRWhUFjTAZXu9Ye1LHcHAMS4eygX7rFYJotKel63uYAAvJliGYHyvAVZxPvoFiEVTP75IB4F3N47agR2Dx7ru9ZEdegwlHRzGPBx4g8eBb6m3NUr3o5ukyLxd60YxrHnvoXHBZujY6fOeWQYIMGIalFkIBh2g4ZsBHntekXlsYjnAwc66dAVJYfuJ3oZW9aLZbzR7dbGJmpRNpjjcS03zddQXboiyF%2BdZXVRpNIWoX1t2jYIQUQDmIskyzWmHZixXlchtWNa1zAdaR/Wlsjil889p0pm97BLf%2Bm3ydu5P5YZ53maLlrZULlKKpW8MzfoJZfmzP3eMDghg7hROZeF1GmSbjv%2BWjoU4%2BNAhR5xA6BtTwtwfT6GJaznO9Yn3k4QPxUu8VbBe6Jyuyd5wb0SIRkuuRIf3UwT0wuXuXHaRl3J5hPlbN/oE8pu6ukXjzf2Yxb6oHvoRX4%2BpMAeiMPCMOAcPp6hDkvAe%2B8AEzxjvPDib8ea1z6B0VgIA%2Bgrj6KQUwfQViUNQGQnQcg5ABi6D0HYgxOCUIIGQ2hWZSD/BAK4FcupXCSG4JITgIJuArBVKqFYIIVxCDIdwSh1DaGkHoX0ShCgQArFINwmhxDSBwFgEgNARg2bsDIBQCA5jLHlGAJwFYkhSBUDwJiZwOiIAOB4ZQo8tBUjzDIZw0g5iZj0AAPKayCYY0gWAjAJnYL4uJeADT5Hjjo2JhI8gq2CZQnGpC%2BghLhg4DGxB5h6CwHk/RhYjC%2BI6DQegTA2AcB4PwQQwhRAoCYTIIQeAHA6MgB0cyiRMkAFoImuDGGMgUhEJAyDkJI7RuR8gaAgOYGoWRSDmBKFEGIwRvC%2BDoJsg5oQ/C7LKC4OoKzEiFGqPoTIgh4h5FuQ0C5LQrmVCKCcuobymh7PKJwDoChWG9C4CQshFCqHJM0QSAAHCqMZKpuAjWQMgMYTjdSSDGBAXAhASCmVcNkMYegLHuOcISoFJKenSC4fUjoAjRG6hVCuOF7Y4UglcNIgAnCsTgqolF9BUaQOpTi9FqLoWQ7Ruj9H1OMTARAKBUBkqseQSgdjyUuE3JwJx2Q3EeOIF4nxsT/GBOqWErQBAomsBieo%2BJiT%2Bh2tSS84smBMnqOycgXJRT8mS0KcU/pZSKkYH6CEncdTDENLoIwFgSS2kCBcZ0sQNK%2BkDPgMMmUfhxmTOmbM/K8zZAyCWTkBIfhNDaB%2Bds7Q7z9nZBCEc/wDzaieEOYkGtgKS0uroHc9ITatnPNWUkP5kRLlPIaJW%2BoRR21XOBaC1pELyGqJhWQ%2BFiLkUZSTRizguoVi6k4DivFdVKUplJfYiS7ZJAIkYQsmQdLI0MsEZIHdkiVzcFcHClc3LkXcv5YK4VEqNFSsUDKgxvCF2SCXbEzRd6wOkHjoast3AgA%3D%3D%3D)
+完整代码见[链接](https://godbolt.org/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAM1QDsCBlZAQwBtMQBGAFlICsupVs1qhkAUgBMAISnTSAZ0ztkBPHUqZa6AMKpWAVwC2tLgE5SW9ABk8tTADljAI0zEQANg%2BkADqgWE6rR6hibmvv6BdLb2Tkau7l6KypiqQQwEzMQEIcamnBZKKmp0GVkEMY4ubp7eCpnZuWEFig0VdlXxNV4AlIqoBsTIHADkUgDMdsiGWADU4uM6RphGJACeC9jiAAwAghNTM5jzi2zAJIQIRps7%2B3sEKz7CDws608wKCrMAKjd79cQDKpZmpkABrTAEeYAdlke1mCJBeHBkIgPROABFZlgqMwDKwCAs4btEbNMAAPJ7IwhIlEECDfWYAKh86JAsx8AH0IKyYbJoRjbqTQRD6fV0CAQAZaHgAI4GTCcnwEYivOyE8ZbSQeKQeDlsjncnwAOmIKQ%2BmDR6PEsJtgvhiPFkulcoVSpVr1%2BmtmZqwKzRfJ9kMGtFmTqlMvliuVqsWXuwEHDFOQCBEwEtXNIs1o%2BNYMZ6PSJMPtux8xDwADdmA8QELEYyWZzMdnczGibc7e29h3JJMqDjZpzOe9REP5t3eziOj8AEoASQAars59ZObtpHP5gBWWQ7kegEAqyt4Nic5jOPDiLeC6898bKJR3qf2WeL5er9dzu9WPBUDv3R5nkwV53k%2BH4/l2AEgShb55yXFc1w3EFywrE9WE5F0o3dYg%2BTrBEj1Q09MLdGMAwWLEcTxAkuxJREKSpZAaQItCMMjEiVQZZleXZLkeWtW0BVJPDkOPIi2OjDjmLE10JJw3VdR9A1eKTckUzTS1iGNTMW1YPMVQLQM7SE7sHXwlCWOI2T5m1VAfDcasSHIiApPQyzsOsnVtUUhEbWJUlSXDBQAHdmB8HlOSzTSuULcY/MRIz4pM2iEUZXVbPsohiCZAM0FoepAzNAgQy4zki07UyRMI1zxOw5zzOkrCY1mXL8t1YhrXGCiUheWKfIqlzWJk9y0rs4gHNjDE6tE6qhqalqoTa9FmywdgeuJYSG1mdN6X46QgyK4hQy5MqBWEgA/Aa3NI3bZl/cL0RWyFjmO3rytLFDqw4DaSubHNdLbWKO1OwGktudUttYVBnFPCsaIrVA8HQWZoeICB1RZdFaFQZNMGVGjbiHasj2cAwHiHKAsbsVgOgM%2BHEeR5gAC9OTGoK/HVNw0foLilqxnHlVwirHoeDl8dOvY6aRgwlBZ5g2Y51HwYxoG4oRFG%2BJo0loeZ1n2foTnWTFkt/12QmCGJ0nFW5CBKdoan7FphGke1wbGo48Mro9RZ1U2fVs2x1TcYW2Fx2SiGoZh5sWSNk3JdmaXFU91GPZqgGdB971De7W0KvVk1tqtTXERdpPEwICUQFWCsMwLGPQb2M2LbJ63bftzBHfpl3LtTlV6W72avfT%2Bhfd5PnA4F3zhOASHofQiso58Ou7mXuOE85fu3eyKaqtd9jYyHjVsBBQts9VhnUYIY0C9rkGw67%2BqZs3sVy8lKvLQIG/1vF5eCbPc3yxJs3CmCM7Y03RHHLuyJRTOSgZCNUw9vQf39vzYOZ88REA5D5TqIJTSYD9EYNERcETTwjnPBeS9birxliKVENCNQH19h/FWwl0GoEweRHBvpMD%2BhimfPOV9USf2EpAukZcK5vz4rwoGxs9gjD6KwEAIwtwjFIKYEY2wVGoEUToOQcgwwDCGMcCYnAVEEEURogspAwQgHGNwY0W5JDQgABweHGNCdx2wnFmGcbwBRIxuAqLURo0gWiRgqIUCAbYpAzHqLkaQOAsAkBoCMD4PA7AyAUAgMk1J6SQDAE4NsSQpAqBpIeMQCJEBnDmJUReWgWQ1iKJMaQZJyx6AAHk7YNNiaQLARg0zsGqT0vAZo0jVwid0ikqRLaNJURzPxTTqbODGsQNYegsAzOieWIw1S%2Bg0HoEwNgHAeD8EEMIUQKBdEyCEHgZwETIB9FsiUPKiiAC0bTxizBeeKciEgZByE4NCcJKQ0gaAgFYJophJC8CsJUOICQQDcCiX4AITyIUgChREFFQRYXVHcIi5IxR0htDRZwAlqQnllGyDiroeKon1HKCS1o5RqXwsRX0BQBjhhcHkYo5RqjBmhPJC4l5HhuBbWQMgWYBTjSSFmBAXAhASDWXGKS2YegUlpLcMqzg6IdF/JkKYnZfRrHjEkMaMwkgnGOI8FuaEbinHQm4KSvxATSDbIKVEoJmjFHhMidEnZ8SYCIBQKgDV6TyCUGyZq9w%2B5OAFNJSUgkbgKlVO6bU%2BpGyWlaAIB01gXTgm9P6aMAtwzyWVkwOM4JkzkDTJGE0uZGzFnLNWRgUYTSjzbNibsugjAWADOOQIIpZyxCXPkIsu5aIQnKiCOMt5Hyvnlx%2BaOgFQLCWgvBfoPICKokwo6HCmobjMVRGCJu5o4wj1PJZTUSQdLgUUuJae0w%2BKihltKG0K97hD30saI%2Brg57v3tFiLi9F2x2WcqOTypRgSBWKKFR4EVYr9xSs4MabYxpOByoVZlbVWZ1U5K1RMSQurR2Gq7camxZqtzcHGE4rcZhRVmE4JIS1zrFGuq9SEn1ig/UxIsZByQ0HumhNI3x0g1dylBARUAA%3D%3D%3D)
 
 [1] https://reviews.llvm.org/D63748
 
