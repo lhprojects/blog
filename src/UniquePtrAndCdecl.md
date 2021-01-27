@@ -4,48 +4,12 @@
 
 最近看了这个[视频](https://www.youtube.com/watch?v=rHIkrotSwcc) ，然后自己再收集了一些资料，有些感悟记录如下。
 
-## Itanium C++ ABI 调用约定
+## unique_ptr不是零开销
 
-考虑如下的代码
-```c++
-void foo(unique_ptr<int> t);
-void bar() {
-    unique_ptr<int> p(new int);
-    foo(std::move(p));
-}
-```
-考虑一个问题，调用foo的时候，参数是如何传递进去的？
-GCC/Clang通常使用Itanium C++ ABI约定。
-在Itanium C++ ABI调用约定里，对于non-trivial的pass-by-value参数，我们首先会在**栈**中创建一个临时变量，
-然后把临时变量的地址传递给被调用的函数，
-函数调用完毕后，**调用者再清理临时变量**（比如调用析构函数）。
-std::unique_ptr就是non-trivial的，因为它具有一个non-trivial的析构函数。
+std::unique_ptr一般被认为是zero-overhead或者说和raw pointer（裸指针）一样高效的。但是实际上不是这样的。
+下面我们举例来说明。
 
-所以上边的代码就类似于
-```c++
-void foo(unique_ptr<int> *pt);
-void bar() {
-    unique_ptr<int> p(new int);
-    unique_ptr<int> t = std::move(p);
-    foo(&t);
-    t.~unique_ptr<int>(); // if(t.get()) delete t.get()
-    // p.~unique_ptr<int>(); 可以被优化掉
-}
-```
-注意在foo函数中不会调用t的析构函数。
-这种调用者负责清理临时变量的做法，使得这种调用约定不能实现真的的move语义。
-如果可以实现真正的move语义的话，那么指针的所有权已经转移给foo了，我们应当在foo函数里调用析构函数。
-真转移所有权具有稍微更高的效率。
-上面的代码中，注意，我们把`t`的地址传递给了`foo`。
-如果`foo`把`t`移动到了别的地方，那么`bar`运行` t.~unique_ptr<int>()`时候，就不应该去释放内存。
-如果`foo`没有动`t`，那么`bar`运行`t.~unique_ptr<int>()`时候，就应该释放资源。但是调用者根本不知道`foo`是否真的消化了这个unique_ptr，只能老老实实的生成如下的代码
-```c++
-if(t.get()) delete t.get();
-```
-对于真转移所有权的做法，foo函数知道自己拥有所有权或者所有权又被转移了，因而不需要判断t.get()是否为空，直接delete t.get()就好了。
-
-具体的反汇编代码可以证明这种推断。
-我们以raw pointer为最优化的基准，c++代码为
+我们以raw pointer为基准，一个简单的c++程序为：
 ```c++
 void bar(int*p) noexcept;
 
@@ -58,7 +22,7 @@ void use_rawpinter(int *p)
     baz_rawpointer(p);
 }
 ```
-std::unique_ptr的c++代码为
+然后我们使用std::unique_ptr实现相同的功能：
 ```c++
 __attribute__((noinline)) void baz_unique_ptr(std::unique_ptr<int>) noexcept {    
 }
@@ -110,11 +74,54 @@ use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >):
 
 ```
 
-现在我们总结std::unique_ptr对程序的两个负面影响
+可以看到std::unique_ptr代码更长一些，所以通常也更慢一些。
+我们总结std::unique_ptr对程序的两个负面影响
 
 - unique_ptr必须通过压栈，再传递地址的方式来传递参数。被调用的函数要访问unique_ptr中的原始指针，多了一个间接层。
 
 - 调用者清理临时unique_ptr，但是调用者不知道被调用者如何蹂躏了这个临时变量，所以调用者无法做出足够的优化。
+
+
+## Itanium C++ ABI 调用约定
+
+为了说明std::unique_ptr为什么生成的指令更多，我们下考虑一个更简单的例子。考虑如下的代码：
+```c++
+void foo(unique_ptr<int> t);
+void bar() {
+    unique_ptr<int> p(new int);
+    foo(std::move(p));
+}
+```
+现在考虑一个问题，调用foo的时候，参数是如何传递进去的？
+GCC/Clang通常使用Itanium C++ ABI约定。
+在Itanium C++ ABI调用约定里，对于non-trivial的pass-by-value参数，我们首先会在**栈**中创建一个临时变量，
+然后把临时变量的地址传递给被调用的函数，
+函数调用完毕后，**调用者再清理临时变量**（比如调用析构函数）。
+std::unique_ptr就是non-trivial的，因为它具有一个non-trivial的析构函数。
+
+所以上边的代码就类似于
+```c++
+void foo(unique_ptr<int> *pt);
+void bar() {
+    unique_ptr<int> p(new int);
+    unique_ptr<int> t = std::move(p);
+    foo(&t);
+    t.~unique_ptr<int>(); // if(t.get()) delete t.get()
+    // p.~unique_ptr<int>(); 可以被优化掉
+}
+```
+注意在foo函数中不会调用t的析构函数。
+这种调用者负责清理临时变量的做法，使得这种调用约定不能实现真的的move语义。
+如果可以实现真正的move语义的话，那么指针的所有权已经转移给foo了，我们应当在foo函数里调用析构函数。
+真转移所有权具有稍微更高的效率。
+上面的代码中，注意，我们把`t`的地址传递给了`foo`。
+如果`foo`把`t`移动到了别的地方，那么`bar`运行` t.~unique_ptr<int>()`时候，就不应该去释放内存。
+如果`foo`没有动`t`，那么`bar`运行`t.~unique_ptr<int>()`时候，就应该释放资源。但是调用者根本不知道`foo`是否真的消化了这个unique_ptr，只能老老实实的生成如下的代码
+```c++
+if(t.get()) delete t.get();
+```
+对于真转移所有权的做法，foo函数知道自己拥有所有权或者所有权又被转移了，因而不需要判断t.get()是否为空，直接delete t.get()就好了。
+
 
 ## Clang的[[clang::trivial_abi]]
 
