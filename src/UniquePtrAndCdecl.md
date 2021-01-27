@@ -42,7 +42,7 @@ void use_unique_ptr(std::unique_ptr<int> p)
 baz_rawpointer(int*): 
   movl (%rdi), %eax          # load the integer from pointer
   movl %eax, global_v(%rip)  # save the integer to global
-  jmp operator delete(void*) # TAILCALL
+  jmp operator delete(void*)
 use_rawpinter(int*):
   pushq %rbx
   movq %rdi, %rbx
