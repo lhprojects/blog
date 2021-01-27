@@ -40,11 +40,9 @@ void use_unique_ptr(std::unique_ptr<int> p)
         
 ```asm
 baz_rawpointer(int*): # @baz_rawpointer(int*)
-  testq %rdi, %rdi
-  je .LBB0_1
+  movl (%rdi), %eax          # load the integer from pointer
+  movl %eax, global_v(%rip)  # save the integer to global
   jmp operator delete(void*) # TAILCALL
-.LBB0_1:
-  retq
 use_rawpinter(int*): # @use_rawpinter(int*)
   pushq %rbx
   movq %rdi, %rbx
@@ -56,9 +54,9 @@ use_rawpinter(int*): # @use_rawpinter(int*)
 
 ```asm
 baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >): # @baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >)
-  movq (%rdi), %rax
-  movl (%rax), %eax
-  movl %eax, global_v(%rip)
+  movq (%rdi), %rax          # load pointer from pointer
+  movl (%rax), %eax          # load integer from pointer
+  movl %eax, global_v(%rip)  # save integer to global
   retq
 use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >): # @use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >)
   pushq %r14
