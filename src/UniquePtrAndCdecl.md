@@ -19,6 +19,7 @@ GCC/Clang通常使用Itanium C++ ABI约定。
 在Itanium C++ ABI调用约定里，对于non-trivial的pass-by-value参数，我们首先会在**栈**中创建一个临时变量，
 然后把临时变量的地址传递给被调用的函数，
 函数调用完毕后，**调用者再清理临时变量**（比如调用析构函数）。
+std::unique_ptr就是non-trivial的，因为它具有一个non-trivial的析构函数。
 
 所以上边的代码就类似于
 ```c++
