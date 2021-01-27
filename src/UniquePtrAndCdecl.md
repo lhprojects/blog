@@ -167,19 +167,17 @@ void use_trivial_unique_ptrt(trivial_unique_ptr<int> t)
 
 其生成的反汇编代码与raw pointer结果一样。
 
-
 但是这种改变abi的方法也是有缺点的。 
 1. 只适用于clang编译器
-2. 改变abi，不能适用于std::unique_ptr，因为Itanium C++ ABI已经广泛被使用了。
-3. 如果只是对unique_ptr开后门的话，那么在所有参数的临时变量中，unique_ptr是最先析构的。那么构造顺序和析构顺序就不能完全的相反。（见视频[问答环节](https://www.youtube.com/watch?v=rHIkrotSwcc) )
+2. 不是标准Itanium C++ ABI，不能适用于std::unique_ptr。因为Itanium C++ ABI的std::unique_ptr已经广泛被使用了。
+3. 如果只是对unique_ptr开后门的话，那么在所有参数的临时变量中，unique_ptr是最先析构的。那么就不能保证参数的构造顺序和析构顺序就完全的相反。（见视频[问答环节](https://www.youtube.com/watch?v=rHIkrotSwcc) )。因而这种ad-hoc的处理方法，可能永远无法成为c++标准的一部分。
 
-
-## ticket
+## ticket类
 
 std::unique_ptr作为参数传递效率不高，而raw pointer又太危险，有没有折中的方法呢？
 在Itanium C++ ABI里，std::unique_ptr不能通过寄存器传递的主要阻碍是Std::unique_ptr有非trivial的析构函数。
 我们可以实现一个只包含trivial析构函数的智能指针。
-注意下面的代码和 [原始代码](https://quuxplusone.github.io/blog/2019/09/21/ticket-for-unique-ptr/) 有些许不同。
+注意下面的代码和原始代码[3]有些许不同。
 ```c++
 
 
@@ -208,13 +206,14 @@ void use_ticket(ticket<int> t)
 
 使用ticket类有几点好处：
 1. 性能和使用raw point完全一样。指针本身通过寄存器传递，被所有权拥有者负责析构。
-2. 表义性比raw pointer好，你知道它试图起到类似unique_ptr的作用。
+2. 易用性，表义性比raw pointer好，你知道它试图起到类似unique_ptr的作用。
 3. 不需要改变ABI。
-4. 易用性比raw pointer好。
 
 但是ticket类依然有几个缺点：
 
 1. 本质上还是raw pointer，没有任何资源管理能力. 在参数传递过程中如果发生异常，会出现资源泄露。
+2. 本质上还是raw pointer，没有任何资源管理能力. 在参数传递过程中如果发生异常，会出现资源泄露。
+3. 本质上还是raw pointer，没有任何资源管理能力. 在参数传递过程中如果发生异常，会出现资源泄露。
 
 
 
@@ -226,5 +225,5 @@ void use_ticket(ticket<int> t)
 
 [2] https://quuxplusone.github.io/blog/2018/05/02/trivial-abi-101/
 
-
+[3] https://quuxplusone.github.io/blog/2019/09/21/ticket-for-unique-ptr/)
 
