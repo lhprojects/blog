@@ -39,26 +39,26 @@ void use_unique_ptr(std::unique_ptr<int> p)
 我们比较他们的反编译代码：
         
 ```asm
-baz_rawpointer(int*): # @baz_rawpointer(int*)
+baz_rawpointer(int*): 
   movl (%rdi), %eax          # load the integer from pointer
   movl %eax, global_v(%rip)  # save the integer to global
   jmp operator delete(void*) # TAILCALL
-use_rawpinter(int*): # @use_rawpinter(int*)
+use_rawpinter(int*):
   pushq %rbx
   movq %rdi, %rbx
   callq bar(int*)
   movq %rbx, %rdi
   popq %rbx
-  jmp baz_rawpointer(int*) # TAILCALL
+  jmp baz_rawpointer(int*)
 ```
 
 ```asm
-baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >): # @baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >)
+baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >):
   movq (%rdi), %rax          # load pointer from pointer
   movl (%rax), %eax          # load integer from pointer
   movl %eax, global_v(%rip)  # save integer to global
   retq
-use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >): # @use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >)
+use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >): 
   pushq %r14
   pushq %rbx
   pushq %rax
@@ -70,13 +70,13 @@ use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >): # @use_unique_p
   movq $0, (%rbx)
   movq %rsp, %rdi
   callq baz_unique_ptr(std::unique_ptr<int, std::default_delete<int> >)
-  testq %r14, %r14
+  testq %r14, %r14           # here is test instruction
   je .LBB3_1
   movq %r14, %rdi
   addq $8, %rsp
   popq %rbx
   popq %r14
-  jmp operator delete(void*) # TAILCALL
+  jmp operator delete(void*)
 ```
 
 可以看到std::unique_ptr代码更长一些，所以通常也更慢一些。
