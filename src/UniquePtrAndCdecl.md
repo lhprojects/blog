@@ -225,5 +225,5 @@ void use_ticket(ticket<int> t)
 
 [2] https://quuxplusone.github.io/blog/2018/05/02/trivial-abi-101/
 
-[3] https://quuxplusone.github.io/blog/2019/09/21/ticket-for-unique-ptr/)
+[3] https://quuxplusone.github.io/blog/2019/09/21/ticket-for-unique-ptr/
 
