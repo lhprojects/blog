@@ -1,6 +1,6 @@
 # unique_ptr 与 Itanium C++ ABI
 
-这不是一篇介绍如何使用unique_ptr的文章。假定读者已经对unique_ptr**使用**和**实现**非常熟悉了。
+这不是一篇介绍如何使用unique_ptr的文章。假定读者已经对unique_ptr的使用和**实现**非常熟悉了。
 
 最近看了这个[视频](https://www.youtube.com/watch?v=rHIkrotSwcc) ，然后自己再收集了一些资料，有些感悟记录如下。
 
