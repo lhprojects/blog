@@ -18,7 +18,7 @@
 
 【c++】[多线程单例模式](src/Singleton.md)
 
-【c++】[Unique_ptr 和 c 调用约定](src/UniquePtrAndCdecl.md)
+【c++】[std::unique_ptr和Itanium C++ ABI](src/UniquePtrAndCdecl.md)
 
 【c++】[C++片段反汇编](src/MyCompilerExplorerSnipets.html)
 
