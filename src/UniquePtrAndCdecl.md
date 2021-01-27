@@ -110,7 +110,7 @@ use_unique_ptr(std::unique_ptr<int, std::default_delete<int> >):
 
 ```
 
-现在我们总结对程序的两个负面影响
+现在我们总结std::unique_ptr对程序的两个负面影响
 
 - unique_ptr必须通过压栈，再传递地址的方式来传递参数。被调用的函数要访问unique_ptr中的原始指针，多了一个间接层。
 
