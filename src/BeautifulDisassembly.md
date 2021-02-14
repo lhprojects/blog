@@ -20,7 +20,7 @@ foo(std::__1::chrono::duration<long long, std::__1::ratio<1l, 1000l> >, std::__1
         ret
 ```
 gcc -O2
-```
+```asm
 foo(std::chrono::duration<long, std::ratio<1l, 1000l> >, std::chrono::duration<int, std::ratio<1l, 60l> >):
         movsx   rsi, esi
         lea     rdx, [rdi+rdi*2]
