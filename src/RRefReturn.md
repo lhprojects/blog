@@ -74,7 +74,7 @@ int main() {
 ```c++
 template<class T>
 std::remove_reference_t<T> &&std::move(T &&v) {
-    static_cast<std::remove_reference_t<T>&&>(v);
+    return static_cast<std::remove_reference_t<T>&&>(v);
 }
 ```
 返回的是引用。
