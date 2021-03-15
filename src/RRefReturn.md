@@ -83,3 +83,20 @@ std::remove_reference_t<T> &&std::move(T &&v) {
 参考 https://godbolt.org/z/PMTd4P .
 
 
+# 思考
+下面的代码为什么是错误的
+```c++
+
+struct Foo {
+    std::vector<int> &&items() {
+        return m_items;
+    }
+    std::vector<int> m_items;
+};
+
+Foo foo() { return {}; }
+
+for (auto& x : foo().items()) {
+}
+
+```
