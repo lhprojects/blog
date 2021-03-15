@@ -80,6 +80,6 @@ std::remove_reference_t<T> &&std::move(T &&v) {
 返回的是引用。
 所以`__range`是对`{1,3,2}`的引用。但是显然作为`std::move()`的参数，它的生命周期在语句#1之后就结束了。
 因为由于`__range`引用的对象不存在了，程序的结果是错误的。
-参考 https://godbolt.org/z/oYqsYf .
+参考 https://godbolt.org/z/PMTd4P .
 
 
