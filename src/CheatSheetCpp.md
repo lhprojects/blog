@@ -72,7 +72,7 @@ class Class {
          user-declared user-defined destructor
        otherwise, as-if defaulted move assignment operator
     */
-    <No move constructor declaration>                      // implicitly-declared move constructor
+    <No move assignment operator declaration>              // implicitly-declared move constructor
         
     // deleted if function can't be auto generated
     // otherwise, function is auto generated

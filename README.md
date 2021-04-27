@@ -42,6 +42,7 @@
 
 【faceswap】[详细记录一次Faceswap换脸](src/faceswap.md)
 
+【c++】 [Beautiful Disassemble](src/BeautifulDisassembly.md)
 
 ## Jupyter Notebooks
 
