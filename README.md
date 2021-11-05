@@ -48,6 +48,8 @@
 
 nbviewer is suggested. nbviewer is very stable and fast, and it support link for table content.
 
+【Physics, pyfeyn】[费恩曼图](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/FeynmanDiagramsScript.ipynb)
+
 【python, physics】[光被随机位置的粒子散射的干涉项的模拟](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/LightScatterringByRandomParticle.ipynb)
 
 【python, numpy】[QQ AppUtil.dll从浏览器历史读取用户某些域名下的搜索数据，人工暴力破解最后一个域名](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/HumanBurstCrackQQDomain.ipynb)
