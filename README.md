@@ -22,7 +22,7 @@
 
 【c++】[std::unique_ptr和Itanium C++ ABI](src/UniquePtrAndCdecl.md)
 
-【c++】[C++片段反汇编](src/MyCompilerExplorerSnipets.html)
+【c++】[C++片段反汇编](src/MyCompilerExplorerSnipets.md)
 
 【c++】[有符号？无符号？性能？确定性？](src/UnsignedSigned.md)
 
