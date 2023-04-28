@@ -30,27 +30,27 @@ toc: true
 
 【c++】[C++片段反汇编](articles/MyCompilerExplorerSnipets.html)
 
-【c++】[有符号？无符号？性能？确定性？](src/UnsignedSigned.md)
+【c++】[有符号？无符号？性能？确定性？](articles/UnsignedSigned.md)
 
-【c++】[C++ 整型备忘](src/IntCpp.md)
+【c++】[C++ 整型备忘](articles/IntCpp.md)
 
-【c++】[尝试std::function的其他设计](src/FunctionAnotherImpl.md)
+【c++】[尝试std::function的其他设计](articles/FunctionAnotherImpl.md)
 
-【c++】[std::function很慢吗？operator()不慢！](src/StdFunctionCall.md)
+【c++】[std::function很慢吗？operator()不慢！](articles/StdFunctionCall.md)
 
-【物理】[人是一颗电子么？](src/APersonAElectron.md)
+【物理】[人是一颗电子么？](articles/APersonAElectron.md)
 
-【c++】[Unicode In c++](src/UnicodeInCpp.md)
+【c++】[Unicode In c++](articles/UnicodeInCpp.md)
 
-【机器学习】[翻译XGboost官方小教程](src/XGBoostIntroduction.md)
+【机器学习】[翻译XGboost官方小教程](articles/XGBoostIntroduction.md)
 
-【c++】[乘法还是移位](src/shift-or-multiply.md)
+【c++】[乘法还是移位](articles/shift-or-multiply.md)
 
-【tensorflow, GPU, RTX 3060Ti】[啊，适配tensorflow和3060Ti，我暴走了！](src/tensorflow-3060ti.md)
+【tensorflow, GPU, RTX 3060Ti】[啊，适配tensorflow和3060Ti，我暴走了！](articles/tensorflow-3060ti.md)
 
-【faceswap】[详细记录一次Faceswap换脸](src/faceswap.md)
+【faceswap】[详细记录一次Faceswap换脸](articles/faceswap.md)
 
-【c++】 [Beautiful Disassemble](src/BeautifulDisassembly.md)
+【c++】 [Beautiful Disassemble](articles/BeautifulDisassembly.md)
 
 ## Jupyter Notebooks
 
