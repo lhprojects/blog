@@ -1,0 +1,12 @@
+main:
+  - title: "Articles"
+    url: /src/
+  - title: "Jupyter Notebooks"
+    url: /JupyterNotebooks/
+  - title: "Categories"
+    url: /categories/  
+  - title: "Tags"
+    url: /tags/
+  - title: "About"
+    url: /about/
+    
