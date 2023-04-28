@@ -51,8 +51,8 @@ plugins:
   - jekyll-include-cache
 author:
   name   : "Harry"
-  avatar : "/assets/images/photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  avatar : "/assets/images/photo.png"
+  bio    : "machine learning, python, and c++"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
@@ -77,10 +77,11 @@ footer:
    # - label: "Instagram"
    #   icon: "fab fa-fw fa-instagram"
    #   url: "https://instagram.com/"
+   
 defaults:
   # _posts
   - scope:
-      path: "src"
+      path: ""
       type: posts
     values:
       layout: single
