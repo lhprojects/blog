@@ -22,7 +22,7 @@ toc: true
 
 ## Articles
 
-【Code & Note】[使用 ChatGPT 分割合并文件有感 Reflection on Using ChatGPT to Split and Merge Files](../src/Chatgpt-splitmergefiles.md)
+【Code & Note】[使用 ChatGPT 分割合并文件有感 Reflection on Using ChatGPT to Split and Merge Files](../_posts/2023-04-29-chatgpt-splitmergefiles.md)
 
 【c++】[多线程单例模式](articles/Singleton.md)
 
