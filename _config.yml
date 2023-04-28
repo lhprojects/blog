@@ -46,8 +46,8 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
-  #- jekyll-feed
-  #- jemoji
+  - jekyll-feed
+  - jemoji
   - jekyll-include-cache
 author:
   name   : "Harry"
@@ -86,9 +86,9 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
+      read_time: false
       comments: true
-      share: true
+      share: false
       related: true
   # _pages
   - scope:
