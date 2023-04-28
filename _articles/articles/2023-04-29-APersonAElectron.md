@@ -1,4 +1,10 @@
-# 人是一颗电子么？
+---
+title: "人是一颗电子么？"
+date: 2023-04-29 04:15:00 +0800
+timezone: Asia/Shanghai
+categories:
+  - Physics
+---
 
 Of course not! 但是人和电子确有很多相似之处。
 
