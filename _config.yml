@@ -32,7 +32,7 @@ include:
   - _pages
   
 collections:
-  src:
+  content:
     output: true
     permalink: /:collection/:path
 
