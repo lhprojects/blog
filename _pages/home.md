@@ -24,9 +24,9 @@ toc: true
 
 【Code & Note】[使用 ChatGPT 分割合并文件有感 Reflection on Using ChatGPT to Split and Merge Files](../src/Chatgpt-splitmergefiles.md)
 
-【c++】[多线程单例模式](src/Singleton.md)
+【c++】[多线程单例模式](../src/Singleton.md)
 
-【c++】[std::unique_ptr和Itanium C++ ABI](src/UniquePtrAndCdecl.md)
+【c++】[std::unique_ptr和Itanium C++ ABI](../src/UniquePtrAndCdecl.md)
 
 【c++】[C++片段反汇编](src/MyCompilerExplorerSnipets.html)
 
