@@ -1,5 +1,5 @@
 ---
-title: "使用 ChatGPT 分割合并文件有感"
+title: "Table of Content"
 date: 2023-04-29 04:15:00 +0800
 timezone: Asia/Shanghai
 categories:
@@ -8,7 +8,6 @@ tags:
   - Catlog
 ---
 
-# Table of Content
 
 ## Projects
 
