@@ -1,6 +1,5 @@
 ---
 title: "使用 ChatGPT 分割合并文件有感"
-last_modified_at: 2023-04-29T01:44:00+08:00
 categories:
   - Tools
 tags:
