@@ -2,6 +2,9 @@
 title: "Table of Content"
 date: 2023-04-29 04:15:00 +0800
 timezone: Asia/Shanghai
+toc: true
+#toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 ## Projects
