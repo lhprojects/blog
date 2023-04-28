@@ -1,12 +1,11 @@
 ---
-layout: post
 title: "使用 ChatGPT 分割合并文件有感"
 last_modified_at: 2023-04-29T01:44:00+08:00
 categories:
   - Tools
 tags:
   - ChatGPT
-  - AI Thought
+  - AIThoughts
 ---
 
 我有一些数据，想保存在未来十年看起来不会倒闭的并且我有权限访问的公共存储上。我自然就看上了微软家的网盘——GitHub。然而，微软家的网盘只支持小于50MB的文件。因为是当作archive存储用，我当然可以接受将文件分割成小于50MB的小文件，然后分别上传。但是微软家的网盘速度也不快，所以我最好还要压缩一下。于是我把需求写到chatgpt里让它帮我写一下代码。于是，一个巨大的txt文件，被我分割然后压缩。生成的文件如下：大概是data.txt，data.txt.partNN，data.txt.partNN.zip。然后将.zip文件上传到网盘上。
