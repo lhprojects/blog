@@ -1,5 +1,3 @@
 ---
 permalink: /aboutme/
-title: "About"
 ---
-
