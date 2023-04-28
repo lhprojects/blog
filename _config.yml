@@ -51,7 +51,7 @@ plugins:
   - jekyll-include-cache
 author:
   name   : "Harry"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/photo.jpg"
   bio    : "My awesome biography constrained to a sentence or two goes here."
   links:
     - label: "Website"
@@ -80,7 +80,7 @@ footer:
 defaults:
   # _posts
   - scope:
-      path: ""
+      path: "src"
       type: posts
     values:
       layout: single
