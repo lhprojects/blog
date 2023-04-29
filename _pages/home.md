@@ -106,7 +106,7 @@ nbviewer is suggested. nbviewer is very stable and fast, and it support link for
 
 【Machine Learning】[GBDT Implementation](https://github.com/lhprojects/blog/blob/master/_posts/articles/GBDT.ipynb)
 
-【Statistics】[bootstrap Experiments](https://github.com/lhprojects/blog/blob/master/_posts/articles/bootstrap.ipynb)
+【Statistics】[bootstrap Experiments](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/bootstrap.ipynb)
 
 【Machine Learning】[Kmeans Implementation](https://github.com/lhprojects/blog/blob/master/_posts/articles/kmeans.ipynb)
 
