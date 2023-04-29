@@ -1,5 +1,5 @@
 ---
-title: `std::function` with Effective Small Buffer Optimization (SBO)
+title: std::function with Effective Small Buffer Optimization (SBO)
 tags: [c++, Small Buffer Optimization]
 categories: [Programming]
 ---
