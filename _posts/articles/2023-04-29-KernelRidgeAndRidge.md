@@ -1,3 +1,8 @@
+---
+title: The difference between kernel ridge regression and features transform + Ridge
+categories: [Machine learning]
+tags: [kernel ridge]
+---
 # The difference between kernel ridge regression and features transform + Ridge
   I assume you have known how the kernel ridge regression and features transform + Ridge work.
  They are somewhat the same. I will list some mirror differences between them. 
