@@ -1,3 +1,15 @@
+---
+title: "Floating-point Division and Multiplication"
+tags:
+  - floating-point
+  - optimization
+  - computer programming
+categories:
+  - mathematics
+  - computer science
+  - programming
+---
+
 ## Division is slow, do it once or in compiling time
 ```
 b = ...
