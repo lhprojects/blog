@@ -30,12 +30,6 @@ paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 include:
   - _pages
-  - _articles
-
-collections:
-  articles:
-    output: true
-    permalink: /:collection/:path/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -97,19 +91,6 @@ defaults:
       comments: true
       share: false
       related: true
-      
-        
-  # _articles/articles
-  - scope:
-      path: "_articles/articles"
-      type: articles
-    values:
-      layout: single
-      author_profile: true
-      read_time: false
-      comments: true
-      share: false
-      related: true
     
   # _pages
   - scope:
@@ -119,13 +100,6 @@ defaults:
       layout: single
       author_profile: true
       
-  # _articles
-  - scope:
-      path: "_articles"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
       
 category_archive:
   type: liquid
