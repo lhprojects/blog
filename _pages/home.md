@@ -20,38 +20,6 @@ toc: true
 
 【Machine Learning, classical_learn】[Logistic regression](https://nbviewer.jupyter.org/github/lhprojects/classical_learn/blob/master/notebooks/LogisticRegression.ipynb)
 
-## Articles
-
-【Code & Note】[使用 ChatGPT 分割合并文件有感 Reflection on Using ChatGPT to Split and Merge Files](../_posts/2023-04-29-chatgpt-splitmergefiles.md)
-
-【c++】[多线程单例模式](articles/Singleton.md)
-
-【c++】[std::unique_ptr和Itanium C++ ABI](articles/UniquePtrAndCdecl.md)
-
-【c++】[C++片段反汇编](articles/MyCompilerExplorerSnipets.html)
-
-【c++】[有符号？无符号？性能？确定性？](articles/UnsignedSigned.md)
-
-【c++】[C++ 整型备忘](articles/IntCpp.md)
-
-【c++】[尝试std::function的其他设计](articles/FunctionAnotherImpl.md)
-
-【c++】[std::function很慢吗？operator()不慢！](articles/StdFunctionCall.md)
-
-【物理】[人是一颗电子么？](articles/APersonAElectron.md)
-
-【c++】[Unicode In c++](articles/UnicodeInCpp.md)
-
-【机器学习】[翻译XGboost官方小教程](articles/XGBoostIntroduction.md)
-
-【c++】[乘法还是移位](articles/shift-or-multiply.md)
-
-【tensorflow, GPU, RTX 3060Ti】[啊，适配tensorflow和3060Ti，我暴走了！](articles/tensorflow-3060ti.md)
-
-【faceswap】[详细记录一次Faceswap换脸](articles/faceswap.md)
-
-【c++】 [Beautiful Disassemble](articles/BeautifulDisassembly.md)
-
 ## Jupyter Notebooks
 
 nbviewer is suggested. nbviewer is very stable and fast, and it support link for table content.
