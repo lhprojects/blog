@@ -1,3 +1,8 @@
+---
+title: C++ 整型备忘
+tag: c++
+---
+
 
 # `std::chrono`
 https://godbolt.org/z/G4qaTM
