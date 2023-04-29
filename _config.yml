@@ -35,7 +35,7 @@ include:
 collections:
   articles:
     output: true
-    permalink: /articles/:title
+    permalink: /:collection/:path/
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -102,7 +102,7 @@ defaults:
   # _articles/articles
   - scope:
       path: "_articles/articles"
-      type: posts
+      type: articles
     values:
       layout: single
       author_profile: true
