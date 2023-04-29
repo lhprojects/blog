@@ -1,4 +1,8 @@
-# std::unique_ptr 与 Itanium C++ ABI
+---
+title: std::unique_ptr 与 Itanium C++ ABI
+tags: ["std::unique_ptr", "Itanium C++ ABI"]
+categories: ["Programing", "c++"]
+---
 
 这不是一篇介绍如何使用c++中std::unique_ptr的文章。假定读者已经对unique_ptr的使用和**实现**非常熟悉了。
 
