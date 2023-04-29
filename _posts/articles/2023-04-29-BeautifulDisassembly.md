@@ -1,6 +1,8 @@
 ---
-title: C++ 整型备忘
-tag: c++
+title: Beautiful Disassembly
+tasg:
+    - c++
+    - Disassembly
 ---
 
 
