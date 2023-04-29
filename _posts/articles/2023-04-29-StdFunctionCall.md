@@ -1,6 +1,6 @@
 ---
 title: Is C++ std::function slow?
-tags: [c++, std::function]
+tags: [c++, "std::function"]
 categories: [Programing, c++]
 ---
 
