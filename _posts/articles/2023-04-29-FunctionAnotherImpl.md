@@ -1,5 +1,9 @@
 
-# std::function with Effective Small Buffer Optimization
+---
+title: `std::function` with Effective Small Buffer Optimization (SBO)
+tags: [c++, Small Buffer Optimization]
+categories: [Programming]
+---
 
 对比GCC和MSVC的实现，一时手痒，自己实现了一个`std::function`的另外一种设计`esbo::function`。
 代码详见 https://gist.github.com/lhprojects/70c8414f9579a6a2d577a0bbf79934a4 。我自己称为std::function with Effective Small Buffer Optimization，有效主要体现在对空间的优化上。GCC和MSVC一般需要两个指针来管理函数对象。
