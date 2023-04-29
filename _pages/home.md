@@ -24,6 +24,8 @@ toc: true
 
 nbviewer is suggested. nbviewer is very stable and fast, and it support link for table content.
 
+【Physics, feynman】[费恩曼图](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/FeynmanDiagramsNew.ipynb)
+
 【Physics, pyfeyn】[费恩曼图](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/FeynmanDiagramsScript.ipynb)
 
 【python, physics】[光被随机位置的粒子散射的干涉项的模拟](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/LightScatterringByRandomParticle.ipynb)
