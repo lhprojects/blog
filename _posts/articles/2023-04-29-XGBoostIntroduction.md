@@ -1,3 +1,11 @@
+---
+title: XGBoost教程
+categories:
+  Machine Learning
+tags:
+  - Machine Learning
+  - XGBoost
+---
 # XGBoost教程
 
 翻译自 [Introduction to Boosted Trees](https://xgboost.readthedocs.io/en/latest/tutorials/model.html)

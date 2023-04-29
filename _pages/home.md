@@ -20,131 +20,99 @@ toc: true
 
 【Machine Learning, classical_learn】[Logistic regression](https://nbviewer.jupyter.org/github/lhprojects/classical_learn/blob/master/notebooks/LogisticRegression.ipynb)
 
-## Articles
-
-【Code & Note】[使用 ChatGPT 分割合并文件有感 Reflection on Using ChatGPT to Split and Merge Files](../_posts/2023-04-29-chatgpt-splitmergefiles.md)
-
-【c++】[多线程单例模式](articles/Singleton.md)
-
-【c++】[std::unique_ptr和Itanium C++ ABI](articles/UniquePtrAndCdecl.md)
-
-【c++】[C++片段反汇编](articles/MyCompilerExplorerSnipets.html)
-
-【c++】[有符号？无符号？性能？确定性？](articles/UnsignedSigned.md)
-
-【c++】[C++ 整型备忘](articles/IntCpp.md)
-
-【c++】[尝试std::function的其他设计](articles/FunctionAnotherImpl.md)
-
-【c++】[std::function很慢吗？operator()不慢！](articles/StdFunctionCall.md)
-
-【物理】[人是一颗电子么？](articles/APersonAElectron.md)
-
-【c++】[Unicode In c++](articles/UnicodeInCpp.md)
-
-【机器学习】[翻译XGboost官方小教程](articles/XGBoostIntroduction.md)
-
-【c++】[乘法还是移位](articles/shift-or-multiply.md)
-
-【tensorflow, GPU, RTX 3060Ti】[啊，适配tensorflow和3060Ti，我暴走了！](articles/tensorflow-3060ti.md)
-
-【faceswap】[详细记录一次Faceswap换脸](articles/faceswap.md)
-
-【c++】 [Beautiful Disassemble](articles/BeautifulDisassembly.md)
-
 ## Jupyter Notebooks
 
 nbviewer is suggested. nbviewer is very stable and fast, and it support link for table content.
 
-【Physics, pyfeyn】[费恩曼图](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/FeynmanDiagramsScript.ipynb)
+【Physics, pyfeyn】[费恩曼图](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/FeynmanDiagramsScript.ipynb)
 
-【python, physics】[光被随机位置的粒子散射的干涉项的模拟](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/LightScatterringByRandomParticle.ipynb)
+【python, physics】[光被随机位置的粒子散射的干涉项的模拟](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/LightScatterringByRandomParticle.ipynb)
 
-【python, numpy】[QQ AppUtil.dll从浏览器历史读取用户某些域名下的搜索数据，人工暴力破解最后一个域名](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/HumanBurstCrackQQDomain.ipynb)
+【python, numpy】[QQ AppUtil.dll从浏览器历史读取用户某些域名下的搜索数据，人工暴力破解最后一个域名](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/HumanBurstCrackQQDomain.ipynb)
 
-【python, numpy】[`hash_unqiue.unique`: a faster implementation of `numpy.unique`](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/HashUnique.ipynb)
-
-
-【Machine Learning, LSA, pLSA, LDA】[LSA, pLSA和LDA：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LSA.ipynb) [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/LSA.ipynb)
-
-【Machine Learning, pytorch】[评测手头几台pc的pytorch的性能：更大的模型](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/TorchBenchmarkBig.ipynb)
-
-【Machine Learning, pytorch】[评测手头几台pc的pytorch的性能](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/TorchBenchmark.ipynb)
-
-【Machine Learning】[K臂老虎机：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/KBandits.ipynb) [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/KBandits.ipynb)
-
-【Python】[`any`, `all` and empty array](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
-[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
-
-【Machine Learning】[LearnLog: Jupyter Notebook中记录traning进度的小工具](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LearnLog.ipynb)
-[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/LearnLog.ipynb)
-
-【Machine Learning】[回归模型比较：演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparsionOfRegressionModels.ipynb)
-
-【Machine Learning】[`sklearn KernelRidge`一点笔记](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SklearnRidgeKernel.ipynb)
-
-【Machine Learning】[局部回归：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LocalRegression.ipynb)
-
-【Machine Learning】[k最邻近与kd树：实现和演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/kNNAndKDTree.ipynb)
-
-【Machine Learning】[高斯过程与过早停止：实验演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/GaussianProcessAndEarlyStopping.ipynb)
-
-【Machine Learning】[高斯过程与超参数优化：实验演示](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/GaussianProcessAndHyperparameterTune.ipynb)
-
-【Machine Learning】[高斯过程回归：实现](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/GaussianProcesssRegression.ipynb)
-
-【Machine Learning】[线性回归与主成分分析与正则化](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LinearRegressionAndPCA_Exp.ipynb)
+【python, numpy】[`hash_unqiue.unique`: a faster implementation of `numpy.unique`](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/HashUnique.ipynb)
 
 
-【Machine Learning】[B样条作为概率密度函数，以及kernel](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/BsplineAsDensityFunctionAndAsKernel.ipynb)
+【Machine Learning, LSA, pLSA, LDA】[LSA, pLSA和LDA：实现和演示](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/LSA.ipynb) [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/LSA.ipynb)
 
-【Machine Learning】[多维高次（非自然）样条回归](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/BSplineRegression.ipynb)
+【Machine Learning, pytorch】[评测手头几台pc的pytorch的性能：更大的模型](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/TorchBenchmarkBig.ipynb)
 
-【Machine Learning】[多维二次自然样条回归](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SplineRegression.ipynb)
+【Machine Learning, pytorch】[评测手头几台pc的pytorch的性能](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/TorchBenchmark.ipynb)
 
-【Numpy】[一些Numpy函数的速度比较](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/NumpyBenchmarks.ipynb)
-[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/JupyterNotebooks/NumpyBenchmarks.ipynb)
+【Machine Learning】[K臂老虎机：实现和演示](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/KBandits.ipynb) [[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/KBandits.ipynb)
 
-【c++】[c++14和c++17练习](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/cxx14Andcxx17Execise.ipynb)
+【Python】[`any`, `all` and empty array](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
+[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/AnyAllAndEmptyArray.ipynb)
 
-【Machine Learning】[多项式拟合中的偏差和方差](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/BiasAndVarianceInPolyFit.ipynb)
+【Machine Learning】[LearnLog: Jupyter Notebook中记录traning进度的小工具](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/LearnLog.ipynb)
+[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/LearnLog.ipynb)
 
-【Machine Learning】[深入支持向量机](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SVMInsight.ipynb)
+【Machine Learning】[回归模型比较：演示](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/ComparsionOfRegressionModels.ipynb)
 
-【Machine Learning】[潜在语义模型：潜在语义分析，概率潜在语义分析和潜在狄利克雷分配](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/LSA.ipynb)
+【Machine Learning】[`sklearn KernelRidge`一点笔记](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/SklearnRidgeKernel.ipynb)
 
-【Machine Learning】[使用Metropolis-Hasting方法产生高斯随机数（非对称建议分布）](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/Metropolis-Hasting.ipynb)
+【Machine Learning】[局部回归：实现和演示](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/LocalRegression.ipynb)
 
-【Optics】[Simple ray tracing in optics](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SimpleRayTracing.ipynb)
+【Machine Learning】[k最邻近与kd树：实现和演示](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/kNNAndKDTree.ipynb)
 
-【Mathematical Model】[New York Covid19](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/NewYorkCovid19.ipynb)
+【Machine Learning】[高斯过程与过早停止：实验演示](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/GaussianProcessAndEarlyStopping.ipynb)
 
-【Machine Learning】[Gaussian Mixture Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/GaussianMixture.ipynb)
+【Machine Learning】[高斯过程与超参数优化：实验演示](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/GaussianProcessAndHyperparameterTune.ipynb)
 
-【c++】[Hi `<filesystem>` in C++](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/HiFilesystem.ipynb)
+【Machine Learning】[高斯过程回归：实现](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/GaussianProcesssRegression.ipynb)
 
-【Statistics】[Estimator of mean, variance, third central moment, and fourth central moment](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/MomentEstimator.ipynb)
-
-【Python, Numpy, Numba, Cython, PyPy, Julia】[A speed comparison between `python` `numpy`, `numba`, `cython`, `pypy`, `julia`, `java` and `c++` in numerical compulation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/ComparePythonAccLib.ipynb)
-
-【Machine Learning】[Naive Bayes Implementation](https://github.com/lhprojects/blog/blob/master/src/NaiveBayes.ipynb)
+【Machine Learning】[线性回归与主成分分析与正则化](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/LinearRegressionAndPCA_Exp.ipynb)
 
 
-【Python】[110道python练习题。](https://github.com/lhprojects/blog/blob/master/src/python110.ipynb)
+【Machine Learning】[B样条作为概率密度函数，以及kernel](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/BsplineAsDensityFunctionAndAsKernel.ipynb)
 
-【Python】[我的Python笔记](https://github.com/lhprojects/blog/blob/master/src/python_note.ipynb)
+【Machine Learning】[多维高次（非自然）样条回归](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/BSplineRegression.ipynb)
 
-【Bash】[我的bash笔记](https://github.com/lhprojects/blog/blob/master/src/bash_note.ipynb)
+【Machine Learning】[多维二次自然样条回归](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/SplineRegression.ipynb)
 
-【Machine Learning】[GBDT Implementation](https://github.com/lhprojects/blog/blob/master/src/GBDT.ipynb)
+【Numpy】[一些Numpy函数的速度比较](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/NumpyBenchmarks.ipynb)
+[[nbviewer]](https://nbviewer.jupyter.org/github/lhprojects/blog/blob/master/_posts/JupyterNotebooks/NumpyBenchmarks.ipynb)
 
-【Statistics】[bootstrap Experiments](https://github.com/lhprojects/blog/blob/master/src/bootstrap.ipynb)
+【c++】[c++14和c++17练习](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/cxx14Andcxx17Execise.ipynb)
 
-【Machine Learning】[Kmeans Implementation](https://github.com/lhprojects/blog/blob/master/src/kmeans.ipynb)
+【Machine Learning】[多项式拟合中的偏差和方差](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/BiasAndVarianceInPolyFit.ipynb)
 
-【Machine Learning】[Support Vector Machine Implementation](https://github.com/lhprojects/blog/blob/master/JupyterNotebooks/SVMImplement.ipynb)
+【Machine Learning】[深入支持向量机](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/SVMInsight.ipynb)
 
-【Numba】[Hi `numba`: some examples with `numba`](https://github.com/lhprojects/blog/blob/master/src/HiNumba.ipynb)
+【Machine Learning】[潜在语义模型：潜在语义分析，概率潜在语义分析和潜在狄利克雷分配](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/LSA.ipynb)
+
+【Machine Learning】[使用Metropolis-Hasting方法产生高斯随机数（非对称建议分布）](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/Metropolis-Hasting.ipynb)
+
+【Optics】[Simple ray tracing in optics](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/SimpleRayTracing.ipynb)
+
+【Mathematical Model】[New York Covid19](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/NewYorkCovid19.ipynb)
+
+【Machine Learning】[Gaussian Mixture Implementation](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/GaussianMixture.ipynb)
+
+【c++】[Hi `<filesystem>` in C++](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/HiFilesystem.ipynb)
+
+【Statistics】[Estimator of mean, variance, third central moment, and fourth central moment](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/MomentEstimator.ipynb)
+
+【Python, Numpy, Numba, Cython, PyPy, Julia】[A speed comparison between `python` `numpy`, `numba`, `cython`, `pypy`, `julia`, `java` and `c++` in numerical compulation](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/ComparePythonAccLib.ipynb)
+
+【Machine Learning】[Naive Bayes Implementation](https://github.com/lhprojects/blog/blob/master/_posts/articles/NaiveBayes.ipynb)
+
+
+【Python】[110道python练习题。](https://github.com/lhprojects/blog/blob/master/_posts/articles/python110.ipynb)
+
+【Python】[我的Python笔记](https://github.com/lhprojects/blog/blob/master/_posts/articles/python_note.ipynb)
+
+【Bash】[我的bash笔记](https://github.com/lhprojects/blog/blob/master/_posts/article/bash_note.ipynb)
+
+【Machine Learning】[GBDT Implementation](https://github.com/lhprojects/blog/blob/master/_posts/articles/GBDT.ipynb)
+
+【Statistics】[bootstrap Experiments](https://github.com/lhprojects/blog/blob/master/_posts/articles/bootstrap.ipynb)
+
+【Machine Learning】[Kmeans Implementation](https://github.com/lhprojects/blog/blob/master/_posts/articles/kmeans.ipynb)
+
+【Machine Learning】[Support Vector Machine Implementation](https://github.com/lhprojects/blog/blob/master/_posts/JupyterNotebooks/SVMImplement.ipynb)
+
+【Numba】[Hi `numba`: some examples with `numba`](https://github.com/lhprojects/blog/blob/master/_posts/articles/HiNumba.ipynb)
 
 
 

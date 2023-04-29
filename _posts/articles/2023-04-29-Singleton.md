@@ -1,3 +1,11 @@
+---
+title: "C++ 单例模式实现"
+tags: [C++, Design Pattern, Singleton]
+categories: [Programing, C++]
+---
+
+
+
 
 # 单例模式
 
