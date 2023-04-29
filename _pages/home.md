@@ -102,7 +102,7 @@ nbviewer is suggested. nbviewer is very stable and fast, and it support link for
 
 【Python】[我的Python笔记](https://github.com/lhprojects/blog/blob/master/_posts/articles/python_note.ipynb)
 
-【Bash】[我的bash笔记](https://github.com/lhprojects/blog/blob/master/_posts/article/bash_note.ipynb)
+【Bash】[我的bash笔记](https://github.com/lhprojects/blog/blob/master/_posts/articles/bash_note.ipynb)
 
 【Machine Learning】[GBDT Implementation](https://github.com/lhprojects/blog/blob/master/_posts/articles/GBDT.ipynb)
 
