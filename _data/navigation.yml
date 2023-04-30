@@ -7,5 +7,7 @@ main:
     url: /categories/
   - title: "Tags"
     url: /tags/
-  - title: "About me"
+  - title: "Photo Gallery"
+    url: /../photo-gallery/
+  - title: "About Me"
     url: /aboutme/
