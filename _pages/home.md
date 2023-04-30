@@ -6,6 +6,10 @@ permalink: /
 toc: true
 ---
 
+This source of this blog is hosted at https://github.com/lhprojects/blog .
+
+You can find more posts at [posts](/posts) or click the Posts button on the top of this website.
+
 ## Projects
 
 [量子力学空间波函数模拟](https://github.com/lhprojects/QuSim)
