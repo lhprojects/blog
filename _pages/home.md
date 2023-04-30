@@ -6,9 +6,9 @@ permalink: /
 toc: true
 ---
 
-This source of this blog is hosted at https://github.com/lhprojects/blog .
+This source of this blog is hosted at [https://github.com/lhprojects/blog](https://github.com/lhprojects/blog) .
 
-You can find more posts at [posts](/posts) or click the Posts button on the top of this website.
+You can find more posts at [/blog/posts](/blog/posts) or click the Posts button on the top of this website.
 
 ## Projects
 
