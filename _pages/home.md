@@ -1,5 +1,5 @@
 ---
-title: "Table of Content"
+title: ""
 date: 2023-04-30 11:15:00 +0800
 timezone: Asia/Shanghai
 permalink: /
