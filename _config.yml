@@ -76,7 +76,7 @@ footer:
    # - label: "Twitter"
    #   icon: "fab fa-fw fa-twitter-square"
    #   url: "https://twitter.com/"
-   - label: "Raw docs of this blog"
+   - label: "Github"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/lhprojects"
    # - label: "Instagram"
