@@ -23,6 +23,8 @@ search: true
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
+# options
+mathjax: true
 # Outputting
 permalink: /:title/
 paginate: 5 # amount of posts to show
