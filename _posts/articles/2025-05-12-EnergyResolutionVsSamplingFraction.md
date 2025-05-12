@@ -33,10 +33,10 @@ The code used for this analysis is available at:
 ### Geometry Comparison
 
 - **Figure A**: Geometry with 1 cm Silicon + 9 cm Brass → mostly absorber  
-  <img src="2025-05-12-EnergyResolutionVsSamplingFraction/S1A9.png" style="zoom:50%;" />
+  <img src="./2025-05-12-EnergyResolutionVsSamplingFraction/S1A9.png" style="zoom:50%;" />
 
 - **Figure B**: Geometry with 5 cm Silicon + 5 cm Brass → more sensitive material  
-  <img src="2025-05-12-EnergyResolutionVsSamplingFraction/S5A5.png" style="zoom:50%;" />
+  <img src="./2025-05-12-EnergyResolutionVsSamplingFraction/S5A5.png" style="zoom:50%;" />
 
 ## 3. Analysis Method
 
@@ -54,20 +54,20 @@ The code used for this analysis is available at:
 ### 4.1 Energy Distributions
 
 - **Figure 1**: 1 cm Silicon  
-  <img src="2025-05-12-EnergyResolutionVsSamplingFraction/simplecalo_1_cell_energy_sum.png" style="zoom:50%;" />
+  <img src="./2025-05-12-EnergyResolutionVsSamplingFraction/simplecalo_1_cell_energy_sum.png" style="zoom:50%;" />
 
 - **Figure 2**: 5 cm Silicon  
-  <img src="2025-05-12-EnergyResolutionVsSamplingFraction/simplecalo_5_cell_energy_sum.png" style="zoom:50%;" />
+  <img src="./2025-05-12-EnergyResolutionVsSamplingFraction/simplecalo_5_cell_energy_sum.png" style="zoom:50%;" />
 
 - **Figure 3**: 9 cm Silicon → shows low-energy tail  
-  <img src="2025-05-12-EnergyResolutionVsSamplingFraction/simplecalo_9_cell_energy_sum.png" style="zoom:50%;" />
+  <img src="./2025-05-12-EnergyResolutionVsSamplingFraction/simplecalo_9_cell_energy_sum.png" style="zoom:50%;" />
 
 ### 4.2 Resolution Trend
 
 - **Figure 4**: Relative resolution (`σ / μ`) vs. sensitive layer thickness  
   - Resolution generally improves with increasing sensitive thickness  
   - A slight degradation is observed at 9 cm  
-  <img src="2025-05-12-EnergyResolutionVsSamplingFraction/summary_sigma_over_mean.png" style="zoom:80%;" />
+  <img src="./2025-05-12-EnergyResolutionVsSamplingFraction/summary_sigma_over_mean.png" style="zoom:80%;" />
 
 ## 5. Discussion
 
