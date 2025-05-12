@@ -1,4 +1,14 @@
-# Analysis of Energy Resolution vs. Calorimeter Sampling Fraction  
+---
+title: Analysis of Energy Resolution vs. Calorimeter Sampling Fraction
+categories:
+  - High Energy Physics
+tags:
+  - Calorimeter
+  - Energy Resolution
+  - DD4hep
+  - Simulation
+---
+
 *(Based on Slide 20 of [DRD6 DD4hep Tutorial, April 2025](https://indico.ijclab.in2p3.fr/event/11400/sessions/5873/attachments/25413/37372/DRD6DD4hepTutorial_April2025.pdf))*
 
 
